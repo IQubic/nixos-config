@@ -28,7 +28,9 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    alacritty
     appimage-run
+    dmenu
     #discord-plugged.override {
     #  themes = [
     #    (builtins.fetchTarball "https://github.com/PhoenixColors/phoenix-discord/archive/master.tar.gz")

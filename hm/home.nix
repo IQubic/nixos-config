@@ -8,8 +8,7 @@
 #   ./alacritty.nix
 #   ./dunst.nix
 #   ./flameshot.nix
-#   ./picom.nix
-    ./xmonad/xmonad.nix 
+#   ./picom.nix 
 #   ./zsh.nix
   ];
 

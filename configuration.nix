@@ -48,6 +48,7 @@
     tree
     wget
     wine
+    xmobar
     zip
   ];
   nixpkgs.config.allowUnfree = true;

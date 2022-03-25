@@ -70,7 +70,10 @@
       displayManager.defaultSession = "none+xmonad";
       windowManager.xmonad = {
         enable = true;
-        enableContribAndExtras = true;
+
+        # Allow nightly contrib flake to work
+        enableContribAndExtras = false;
+        extraPackages = hp: [ hp.xmonad-contrib ];
       };     
     };
 

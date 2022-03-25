@@ -2,20 +2,21 @@
 
 {
   home.username = "avi";
-  home.homeDirectory = "/home/${home.username}";
+  home.homeDirectory = "/home/avi";
 
-#  imports = [
-#   ./alacritty
-#   ./dunst
-#   ./flameshot
-#   ./picom 
-#   ./zsh
-#  ]
+  imports = [
+#   ./alacritty.nix
+#   ./dunst.nix
+#   ./flameshot.nix
+#   ./picom.nix
+    ./xmonad/xmonad.nix 
+#   ./zsh.nix
+  ];
 
   programs.git = {
     enable = true;
-    userName = "iqubic"
-    userEmail = "avi.caspe@gmail.com"
+    userName = "iqubic";
+    userEmail = "avi.caspe@gmail.com";
   };
 
   home.stateVersion = "22.05";

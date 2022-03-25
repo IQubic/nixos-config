@@ -1,15 +1,6 @@
 { config, pkgs, ... }:
 
-let
-  powercord-overlay = import (builtins.fetchTarball "https://github.com/LavaDesu/powercord-overlay/archive/master.tar.gz");  
-in
-
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-    ];
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -65,10 +56,31 @@ in
     experimental-features = nix-command flakes
   '';
 
+
+
   # Enable the X11 windowing system.
-  services.xserver = {
-    layout = "us,gr";
-    xkbOptions = "caps:escape,grp:shifts_toggle,grp_led:caps";
+  services = {
+    xserver = {
+
+      layout = "us,gr";
+      xkbOptions = "caps:escape,grp:shifts_toggle,grp_led:caps";
+ 
+      libinput.enable = true;
+
+      displayManager.defaultSession = "none+xmonad";
+      windowManager.xmonad = {
+        enable = true;
+        enableContribAndExtras = true;
+      };     
+    };
+
+    gnome.gnome-keyring.enable = true;
+    upower.enable = true;
+
+    dbus = {
+      enable = true;
+      packages = [ pkgs.dconf ];
+    };
   };
 
   # Enable sound.
@@ -79,6 +91,7 @@ in
   };
   services.blueman.enable = true;
 
+  systemd.services.upower.enable = true;
 
   # Users
   users.users.avi = {
@@ -94,8 +107,6 @@ in
     ];
   };
 
-
   system.stateVersion = "21.11";
-
 }
 

@@ -60,6 +60,7 @@
   # Enable the X11 windowing system.
   services = {
     xserver = {
+      enable = true;
 
       layout = "us,gr";
       xkbOptions = "caps:escape,grp:shifts_toggle,grp_led:caps";

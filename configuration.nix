@@ -56,8 +56,6 @@
     experimental-features = nix-command flakes
   '';
 
-
-
   # Enable the X11 windowing system.
   services = {
     xserver = {
@@ -70,6 +68,7 @@
       displayManager.defaultSession = "none+xmonad";
       windowManager.xmonad = {
         enable = true;
+        config = ./hm/xmonad.hs;
 
         # Allow nightly contrib flake to work
         enableContribAndExtras = false;

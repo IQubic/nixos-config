@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
+    xmonad.url = "github:xmonad/xmonad";
+    xmonad-contrib.url = "github:xmonad/xmonad-contrib";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,12 +13,15 @@
     emacs.url = "github:nix-community/emacs-overlay";
   };
 
-  outputs = { self, nixpkgs, nur, home-manager, emacs }: {
+  outputs = { self, nixpkgs, nur, home-manager, emacs, xmonad, xmonad-contrib }: {
     nixosConfigurations.LATITUDE-NIXOS = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
+
+        { nixpkgs.overlays = [ xmonad.overlay xmonad-contrib.overlay ]; }
+
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

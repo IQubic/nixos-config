@@ -1,9 +1,10 @@
-inputs @ { config, pkgs, ... }:
+{ config, pkgs, ... }:
 {
   home.packages = [
-    pkgs.discord-plugged.override {
-      themes = [
-      ];
-      plugins = [
-      ];
-}    
+    pkgs.discord-plugged
+#    pkgs.discord-plugged.override {
+#      themes = [ ];
+#      plugins = [ ];
+#    }
+  ];
+}

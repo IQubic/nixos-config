@@ -11,17 +11,9 @@
 
     # Powercord
     powercord.url = "github:LavaDesu/powercord-overlay";
-    discord-phoenix-colors = {
-      url = "github:PhoenixColors/phoenix-discord";
-      flake = false;
-    };
-    discord-tokipona = {
-      url = "github:somasis/discord-tokipona";
-      flake = false;
-    };
   };
 
-  outputs = inputs: {
+  outputs = inputs @ { nixpkgs, home-manager, ... }: {
     nixosConfigurations.LATITUDE-NIXOS = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

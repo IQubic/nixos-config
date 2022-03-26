@@ -70,15 +70,9 @@
  
       libinput.enable = true;
 
+      # See ./hm/xmonad.nix for additional config
       displayManager.defaultSession = "none+xmonad";
-      windowManager.xmonad = {
-        enable = true;
-        config = ./hm/xmonad.hs;
-
-        # Allow nightly contrib flake to work
-        enableContribAndExtras = false;
-        extraPackages = hp: [ hp.xmonad-contrib ];
-      };     
+      windowManager.xmonad.enable = true;
     };
 
     gnome.gnome-keyring.enable = true;

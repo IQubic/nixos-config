@@ -10,7 +10,8 @@
 #   ./dunst.nix
 #   ./firefox.nix
 #   ./flameshot.nix
-#   ./picom.nix 
+#   ./picom.nix
+    ./xmonad.nix 
 #   ./zsh.nix
   ];
 

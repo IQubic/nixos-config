@@ -37,7 +37,6 @@
     git
     i3lock-color
     pavucontrol
-    steam
     steam-run
     tree
     wget
@@ -46,6 +45,12 @@
     zip
   ];
   nixpkgs.config.allowUnfree = true;
+  
+  # Flatpak
+  services.flatpak.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  # Allow flakes
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
     experimental-features = nix-command flakes

@@ -11,15 +11,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     emacs.url = "github:nix-community/emacs-overlay";
+
+    # Powercord
+    powercord-overlay.url = "github:LavaDesu/powercord-overlay";
   };
 
-  outputs = { self, nixpkgs, nur, home-manager, emacs, xmonad, xmonad-contrib }: {
+  outputs = inputs @ { home-manager, xmonad, xmonad-contrib, ... }: {
     nixosConfigurations.LATITUDE-NIXOS = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
 
+        # XMonad overlay
         { nixpkgs.overlays = [ xmonad.overlay xmonad-contrib.overlay ]; }
 
         home-manager.nixosModules.home-manager {

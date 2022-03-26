@@ -13,16 +13,15 @@ import XMonad.Actions.WithAll (killAll)
 
 -- Hooks
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.ManageDocks (avoidStruts, docks, manageDocks)
+import XMonad.Hooks.ManageDocks (avoidStruts, docks)
 import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.SetWMName
 
 -- Data and Control modules
-import Data.Monoid (All)
 
 -- Layouts modifiers
-import XMonad.Layout.LimitWindows (limitWindows, increaseLimit, decreaseLimit)
+import XMonad.Layout.LimitWindows (increaseLimit, decreaseLimit)
 import XMonad.Layout.NoBorders (smartBorders, hasBorder)
 
 -- Utilities
@@ -43,10 +42,6 @@ myBrowser = "firefox "
 -- Make Emacs keybindings easier to type
 myEmacs :: String
 myEmacs = "emacsclient -c -a 'emacs' "
-
--- Set Emacs as editor
-myEditor :: String
-myEditor = "emacsclient -c -a 'emacs' "
 
 myBorderWidth :: Dimension
 myBorderWidth = 3

@@ -26,7 +26,7 @@ import XMonad.Layout.NoBorders (smartBorders, hasBorder)
 
 -- Utilities
 import XMonad.Util.EZConfig (additionalKeysP)
-import XMonad.Util.Run (spawnPipe)
+import XMonad.Util.Run (spawnPipe, safeSpawn)
 import XMonad.Util.SpawnOnce
 
 -- Use super as mod
@@ -87,8 +87,7 @@ myManageHook = composeAll
 myKeys :: [(String, X ())]
 myKeys =
     -- KB_GROUP XMonad
-    [ ("M-C-r", spawn "xmonad --recompile")       -- Recompiles xmonad
-    , ("M-S-r", spawn "xmonad --restart")         -- Restarts xmonad
+    [ ("M-S-r", safeSpawn "xmonad" ["--restart"]) -- Recompiles xmonad
     , ("M-S-q", io exitSuccess)                   -- Quits xmonad
 
     -- KB_GROUP Run Prompt

@@ -6,25 +6,35 @@
     nur.url = "github:nix-community/NUR";
     xmonad.url = "github:xmonad/xmonad";
     xmonad-contrib.url = "github:xmonad/xmonad-contrib";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager.url = "github:nix-community/home-manager";
     emacs.url = "github:nix-community/emacs-overlay";
 
     # Powercord
-    powercord-overlay.url = "github:LavaDesu/powercord-overlay";
+    powercord.url = "github:LavaDesu/powercord-overlay";
+    discord-phoenix-colors = {
+      url = "github:PhoenixColors/phoenix-discord";
+      flake = false;
+    };
+    discord-tokipona = {
+      url = "github:somasis/discord-tokipona";
+      flake = false;
+    };
   };
 
-  outputs = inputs @ { home-manager, xmonad, xmonad-contrib, ... }: {
+  outputs = inputs: {
     nixosConfigurations.LATITUDE-NIXOS = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
 
-        # XMonad overlay
-        { nixpkgs.overlays = [ xmonad.overlay xmonad-contrib.overlay ]; }
+        # Overlays from flakes
+        { nixpkgs.overlays = [ 
+            inputs.xmonad.overlay 
+            inputs.xmonad-contrib.overlay 
+            inputs.powercord.overlay
+          ]; 
+        }
 
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;

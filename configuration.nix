@@ -70,7 +70,7 @@
  
       libinput.enable = true;
 
-      # See ./hm/xmonad.nix for additional config
+      # See ./hm/xmonad-config/xmonad.nix for additional config
       displayManager.defaultSession = "none+xmonad";
       windowManager.xmonad.enable = true;
     };

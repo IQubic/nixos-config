@@ -11,7 +11,7 @@
 #   ./firefox.nix
 #   ./flameshot.nix
 #   ./picom.nix
-    ./xmonad.nix 
+    ./xmonad-config/xmonad.nix 
 #   ./zsh.nix
   ];
 

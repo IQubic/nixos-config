@@ -46,6 +46,9 @@
   ];
   nixpkgs.config.allowUnfree = true;
   
+  programs.steam.enable = true;
+  hardware.steam-hardware.enable = true;
+
   # Flatpak
   services.flatpak.enable = true;
   xdg.portal.enable = true;

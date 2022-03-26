@@ -14,11 +14,13 @@ import XMonad.Actions.WithAll (killAll)
 -- Hooks
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks (avoidStruts, docks)
+import XMonad.Hooks.WindowSwallowing
 import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.SetWMName
 
 -- Data and Control modules
+import Data.Monoid (All)
 
 -- Layouts modifiers
 import XMonad.Layout.LimitWindows (increaseLimit, decreaseLimit)
@@ -67,7 +69,7 @@ myStartupHook = do
 
 -- ManageHook rules
 myManageHook :: ManageHook
-myManageHook = composeAll
+myManageHook = mconcat
      [ isFullscreen --> doFullFloat
      , className =? "dunst"          --> doIgnore  
      , className =? "confirm"        --> doFloat
@@ -145,6 +147,10 @@ myKeys =
     , ("M-s", spawn "flameshot gui")
     ]
 
+-- handleEventHook
+myHandleEventHook :: X All
+myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
+
 myXMobarPP :: Handle -> PP
 myXMobarPP xmproc = xmobarPP
   { ppOutput = hPutStrLn xmproc
@@ -154,7 +160,7 @@ myXMobarPP xmproc = xmobarPP
   , ppHidden = xmobarColor "#b48ead" ""
   , ppHiddenNoWindows = const ""
   , ppSep = pad "|"
-  , ppOrder  = \(ws:l:_:_) -> [ws, l]
+  , ppOrder  = \(ws:l:t:_) -> [ws, l, t]
   }
 
 main :: IO ()
@@ -164,9 +170,9 @@ main = do
     let baseConfig = docks $ ewmhFullscreen $ ewmh desktopConfig
     
     xmonad $ baseConfig
-      { startupHook        = myStartupHook <+> startupHook baseConfig
+      { startupHook        = myStartupHook <> startupHook baseConfig
       , logHook            = dynamicLogWithPP $ myXMobarPP xmproc
-      , handleEventHook    = handleEventHook baseConfig
+      , handleEventHook    = myHandleEventHook <> handleEventHook baseConfig
       , manageHook         = myManageHook <+> manageHook baseConfig
       , layoutHook         = avoidStruts $ smartBorders $ layoutHook baseConfig
       , modMask            = myModMask

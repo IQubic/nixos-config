@@ -103,7 +103,7 @@ myKeys =
     , ("M-<Return>", spawn myTerminal)
     , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
     , ("M-b", spawn myBrowser)
-    , ("M-p", spawn "powercord")
+    , ("M-p", spawn "DiscordCanary")
 
     -- KB_GROUP Kill windows
     , ("M-S-c", kill1)     -- Kill the currently focused client

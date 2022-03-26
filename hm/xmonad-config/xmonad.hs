@@ -148,7 +148,7 @@ myKeys =
     ]
 
 -- handleEventHook
-myHandleEventHook :: X All
+myHandleEventHook :: Event -> X All
 myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
 
 myXMobarPP :: Handle -> PP
@@ -173,7 +173,7 @@ main = do
       { startupHook        = myStartupHook <> startupHook baseConfig
       , logHook            = dynamicLogWithPP $ myXMobarPP xmproc
       , handleEventHook    = myHandleEventHook <> handleEventHook baseConfig
-      , manageHook         = myManageHook <+> manageHook baseConfig
+      , manageHook         = myManageHook <> manageHook baseConfig
       , layoutHook         = avoidStruts $ smartBorders $ layoutHook baseConfig
       , modMask            = myModMask
       , terminal           = myTerminal

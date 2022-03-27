@@ -58,7 +58,7 @@
         
         # Markup options
         markup = "full";
-        format = "<b>%s</b>\n%b";
+        format = "<b>%s</b>\\n%b";
 
         # Text alignment
         alignment = "left";

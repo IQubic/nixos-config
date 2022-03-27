@@ -87,7 +87,7 @@ myManageHook = mconcat
 myKeys :: [(String, X ())]
 myKeys =
     -- KB_GROUP XMonad
-    [ ("M-S-r", safeSpawn "xmonad" ["--restart"]) -- Recompiles xmonad
+    [ ("M-q", safeSpawn "xmonad" ["--restart"]) -- Recompiles xmonad
     , ("M-S-q", io exitSuccess)                   -- Quits xmonad
 
     -- KB_GROUP Run Prompt
@@ -137,8 +137,8 @@ myKeys =
 
     -- KB_GROUP dunst
     , ("C-<Space>",      spawn "dunstctl close")
-    , ("C-S-<Space>",    spawn "dunstctl close_all")
-    , ("M-C-S-<Space>",  spawn "dunstctl history-pop")
+    , ("C-S-<Space>",    spawn "dunstctl history-pop")
+    , ("M-C-S-<Space>",  spawn "dunstctl close-all")
 
     -- KB_GROUP Screenshots
     , ("M-a", spawn "flameshot full")
@@ -158,7 +158,7 @@ myXMobarPP xmproc = xmobarPP
   , ppHidden = xmobarColor "#b48ead" ""
   , ppHiddenNoWindows = const ""
   , ppSep = pad "|"
-  , ppOrder  = \(ws:l:t:_) -> [ws, l, t]
+  , ppOrder  = \(ws:l:_:_) -> [ws, l]
   }
 
 main :: IO ()

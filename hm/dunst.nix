@@ -76,6 +76,9 @@
         # Hide duplicate notification count
         hide_duplicate_count = true;
 
+        # Don't display indicators for URLs (U) and actions (A).
+        show_indicators = false;
+
         # Enable word wrap
         word_wrap = false;
 

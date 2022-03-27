@@ -4,5 +4,5 @@ let
 in 
 {
   # Allow XMonad to my specific config when hot-reloading
-  home.file."~/.cache/xmonad/xmonad-${pkgs.stdenv.system}".source = "${xmonadConfig}/bin/xmonad-config";
+  home.file.".cache/xmonad/xmonad-${pkgs.stdenv.system}".source = "${xmonadConfig}/bin/xmonad-config";
 }

@@ -59,8 +59,6 @@ myFocusColor = "#eceff4"
 -- Startup Hook
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "lxsession &"
-    spawnOnce "nm-applet &"
     spawnOnce "emacs --daemon"
     spawnOnce "xset dpms 300 300 &"
     spawnOnce "picom &"

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   home.packages = [ pkgs.libnotify ]; 
-  dunst = {
+  services.dunst = {
     enable = true;
     settings = {
       global = {
@@ -12,7 +12,7 @@
         width = 200;
         height = 300;
         origin = "top-right";
-        offset = "15x20"
+        offset = "15x20";
         scale = 0;
 
         # Show all notifications
@@ -26,7 +26,7 @@
         progress_bar_max_width = 300;
 
         # List number of hidden alerts
-        indicate_hidden = yes;
+        indicate_hidden = true;
 
         # No transparency
         transparency = 0;
@@ -51,7 +51,7 @@
         idle_threshold = 0;
 
         # Font
-        font = "Iosevka Term 14"
+        font = "Iosevka Term 14";
         
         # Spacing between lines of text
         line_height = 3;
@@ -80,7 +80,7 @@
         word_wrap = false;
 
         # No icons
-        icon_position = off;
+        icon_position = "off";
 
         # Never time out a message from history
         sticky_history = true;
@@ -97,7 +97,7 @@
 
         # Don't listen to the dbus closeNotification message
         # Prevents other applications from closing notifications early
-        ignore_dbusclose = yes;
+        ignore_dbusclose = true;
 
         # Ignore mouse clicks
         mouse_left_click   = "none";
@@ -117,15 +117,15 @@
         timeout     = 6;
       };
       urgency_critical = {
-        frame_color = "#B7472A"
-        foreground  = "#B7472A"
-        background  = "#191311"
-        timeout     = 8    
+        frame_color = "#B7472A";
+        foreground  = "#B7472A";
+        background  = "#191311";
+        timeout     = 8;
       };
       flameshot_ignore = {
-        appname = flameshot
-        skip_display = true
-        history_ignore = yes
+        appname = "flameshot";
+        skip_display = true;
+        history_ignore = true;
       };
     };  
   };

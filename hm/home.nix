@@ -5,9 +5,9 @@
   home.homeDirectory = "/home/avi";
 
   imports = [
-#   ./alacritty.nix
+    ./alacritty.nix
     ./powercord.nix
-#   ./dunst.nix
+    ./dunst.nix
 #   ./firefox.nix
 #   ./flameshot.nix
 #   ./picom.nix

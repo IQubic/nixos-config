@@ -28,7 +28,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    alacritty
     appimage-run
     dmenu
     firefox-bin
@@ -37,8 +36,8 @@
     git
     i3lock-color
     pavucontrol
-    steam-run
     tree
+    vim
     wget
     wine
     xmobar

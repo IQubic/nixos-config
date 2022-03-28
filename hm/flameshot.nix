@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 {
+  # Let home-manager create the screenshots directory
+  home.file."screenshots/.keep".text = "";
+
   services.flameshot = {
     enable = true;
-
-    # Let home-manager create the screenshots directory
-    home.file."screenshots/.keep".text = "";
 
     settings = {
       General = {
@@ -15,7 +15,7 @@
         saveAsFileExtension="jpeg";
         savePath="{config.home.homeDirectory}/screenshots";
         savePathFixed=true;
-        uiColor="#00ffde"
+        uiColor="#00ffde";
       };
 
       Shortcuts = {

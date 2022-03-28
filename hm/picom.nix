@@ -5,8 +5,8 @@
 
     shadow           = false;
     blur             = false;
-    active-opacity   = 1;
-    inactive-opacity = 1;
-    menu-opacity     = 1;
+    activeOpacity    = "1.0";
+    inactiveOpacity  = "1.0";
+    menuOpacity      = "1.0";
   };
 }

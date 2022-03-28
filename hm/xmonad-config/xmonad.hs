@@ -59,10 +59,9 @@ myFocusColor = "#eceff4"
 -- Startup Hook
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "emacs --daemon"
     spawnOnce "xset dpms 300 300 &"
-    spawnOnce "picom &"
 
+    -- Hack to make Java programs work properly
     setWMName "LG3D"
 
 -- ManageHook rules

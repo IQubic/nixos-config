@@ -9,10 +9,18 @@
     ./powercord.nix
     ./dunst.nix
 #   ./firefox.nix
-#   ./flameshot.nix
-#   ./picom.nix
+    ./flameshot.nix
+    ./picom.nix
     ./xmonad-config/xmonad.nix 
 #   ./zsh.nix
+  ];
+
+  # Packages not needed by root
+  home.packages = with pkgs; [
+    firefox-bin
+    gimp
+    pavucontrol
+    wine
   ];
 
   programs.git = {

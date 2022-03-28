@@ -29,18 +29,10 @@
 
   environment.systemPackages = with pkgs; [
     appimage-run
-    dmenu
-    firefox-bin
-    flameshot
-    gimp
     git
-    i3lock-color
-    pavucontrol
     tree
     vim
     wget
-    wine
-    xmobar
     zip
   ];
   nixpkgs.config.allowUnfree = true;

@@ -280,6 +280,54 @@
         "type": "github"
       }
     },
+    "plover-plugins-manager-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1636062295,
+        "narHash": "sha256-+ASEFxjIeqOwwIwojOltA4nAG/HMz+px+wMXuCOc+Dw=",
+        "owner": "benoit-pierre",
+        "repo": "plover_plugins_manager",
+        "rev": "d976d8a3dfd45e35da9697393f6708429f93ed6e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "benoit-pierre",
+        "repo": "plover_plugins_manager",
+        "type": "github"
+      }
+    },
+    "plover-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1647205630,
+        "narHash": "sha256-QhdiyqZh9/UX2AP4dZUKgqYWeJgn1xjpE7Q4HMke2zI=",
+        "owner": "openstenoproject",
+        "repo": "plover",
+        "rev": "2ada7c71cd25a114e1439817a44206ff0da8b70e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "openstenoproject",
+        "repo": "plover",
+        "type": "github"
+      }
+    },
+    "plover-stroke-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1645886778,
+        "narHash": "sha256-R/q7xL2zU7RdywHEcXW2tYbu89bfgCxBrB9DAKFurPU=",
+        "owner": "benoit-pierre",
+        "repo": "plover_stroke",
+        "rev": "eb364883c35f036f0d9c8688137b752365684002",
+        "type": "github"
+      },
+      "original": {
+        "owner": "benoit-pierre",
+        "repo": "plover_stroke",
+        "type": "github"
+      }
+    },
     "powercord": {
       "inputs": {
         "nixpkgs": "nixpkgs_3",
@@ -321,9 +369,29 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur",
+        "plover-plugins-manager-src": "plover-plugins-manager-src",
+        "plover-src": "plover-src",
+        "plover-stroke-src": "plover-stroke-src",
         "powercord": "powercord",
+        "rtf-tokenize-src": "rtf-tokenize-src",
         "xmonad": "xmonad",
         "xmonad-contrib": "xmonad-contrib"
+      }
+    },
+    "rtf-tokenize-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1633915168,
+        "narHash": "sha256-zwD2sRYTY1Kmm/Ag2hps9VRdUyQoi4zKtDPR+F52t9A=",
+        "owner": "benoit-pierre",
+        "repo": "rtf_tokenize",
+        "rev": "509b009b97077d5abcebe53d46ca6b67c3438a2c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "benoit-pierre",
+        "repo": "rtf_tokenize",
+        "type": "github"
       }
     },
     "xmonad": {

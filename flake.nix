@@ -51,8 +51,12 @@
           home-manager.useUserPackages = true;
           home-manager.users.avi = import ./hm/home.nix;
 
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home.nix
+          home-manager.extraSpecialArgs = {
+             inherit (inputs) plover-src;
+             inherit (inputs) plover-plugins-manager-src;
+             inherit (inputs) plover-stroke-src;
+             inherit (inputs) rtf-tokenize-src;
+          };
         }
       ];
     };

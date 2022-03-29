@@ -17,13 +17,13 @@
       psa    = "ps auxf";
       psgrep = "ps aux | grep -v grep | grep -i -e VSZ -e";
       psmem  = "ps auxf | sort -nr -k 4";
-      pscpu  = "ps auxf | sort -nr -k 3"
+      pscpu  = "ps auxf | sort -nr -k 3";
     };
 
     oh-my-zsh = {
       enable = true;
       theme = "gallifrey";
-      plugins = "git";
+      plugins = [ "git" ];
     };
 
     enableCompletion = true;

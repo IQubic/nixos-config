@@ -30,6 +30,7 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     git
+    htop
     tree
     vim
     wget

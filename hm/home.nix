@@ -6,6 +6,7 @@
 
   imports = [
     ./alacritty.nix
+    ./plover/plover.nix
     ./powercord.nix
     ./dunst.nix
 #   ./firefox.nix

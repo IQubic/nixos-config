@@ -102,6 +102,8 @@
       "systemd-journal"
     ];
   };
+  # For ZSH auto completion
+  environment.pathsToLink = [ "/share/zsh" ];
 
   system.stateVersion = "21.11";
 }

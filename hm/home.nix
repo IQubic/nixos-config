@@ -12,7 +12,7 @@
     ./flameshot.nix
     ./picom.nix
     ./xmonad-config/xmonad.nix 
-#   ./zsh.nix
+    ./zsh.nix
   ];
 
   # Packages not needed by root

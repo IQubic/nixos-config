@@ -13,7 +13,7 @@
         contrastUiColor="#00a4b0";
         filenamePattern="%F_%S-%M";
         saveAsFileExtension="jpeg";
-        savePath="{config.home.homeDirectory}/screenshots";
+        savePath="${config.home.homeDirectory}/screenshots";
         savePathFixed=true;
         uiColor="#00ffde";
       };

@@ -22,6 +22,7 @@
     gimp
     pavucontrol
     wine
+    zoom-us
   ];
 
   programs.git = {

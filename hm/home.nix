@@ -9,7 +9,6 @@
     ./plover/plover.nix
     ./powercord.nix
     ./dunst.nix
-#   ./firefox.nix
     ./flameshot.nix
     ./picom.nix
     ./xmonad-config/xmonad.nix 

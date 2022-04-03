@@ -6,7 +6,7 @@ in
   xsession = {
     enable = true;
 
-    command = "${xmonadConfig}/bin/xmonad-config";
+    windowManager.command = "${xmonadConfig}/bin/xmonad-config";
 
     # Set mouse cursor
     pointerCursor = {

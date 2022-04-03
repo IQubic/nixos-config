@@ -7,6 +7,7 @@ in
   home.file.".cache/xmonad/xmonad-${pkgs.stdenv.system}".source = "${xmonadConfig}/bin/xmonad-config";
 
   home.packages = with pkgs; [
+    brightnessctl
     dmenu
     i3lock-color
     xmobar

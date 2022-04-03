@@ -34,6 +34,7 @@
     tree
     vim
     wget
+    unzip
     zip
   ];
   nixpkgs.config.allowUnfree = true;

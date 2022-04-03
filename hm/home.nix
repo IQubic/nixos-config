@@ -20,6 +20,7 @@
     firefox-bin
     gimp
     pavucontrol
+    sxiv
     wine
     zoom-us
   ];

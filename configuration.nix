@@ -63,10 +63,6 @@
  
       libinput.enable = true;
 
-      # See ./hm/xmonad-config/xmonad.nix for additional xmonad config
-      displayManager.defaultSession = "none+xmonad";
-      windowManager.xmonad.enable = true;
-
       displayManager.lightdm = {
         enable = true;
         greeters.gtk = {

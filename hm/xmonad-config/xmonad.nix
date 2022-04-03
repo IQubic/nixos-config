@@ -6,6 +6,8 @@ in
   xsession = {
     enable = true;
 
+    command = "${xmonadConfig}/bin/xmonad-config";
+
     # Set mouse cursor
     pointerCursor = {
       package = pkgs.bibata-extra-cursors;

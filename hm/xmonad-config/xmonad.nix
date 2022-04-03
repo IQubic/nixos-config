@@ -16,7 +16,8 @@ in
   # Set mouse cursor
   xsession.pointerCursor = {
     package = pkgs.bibata-extra-cursors;
-    name = "DodgerBlue";
+    name = "Bibata-Modern-DodgerBlue";
+    defaultCursor = "left_ptr";
     size = 32;
   };
 }

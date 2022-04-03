@@ -72,7 +72,7 @@
           enable = true;
           cursorTheme = {
             package = pkgs.bibata-extra-cursors;
-            name = "DodgerBlue";
+            name = "Bibata-Modern-DodgerBlue";
             size = 32;
           };
         };

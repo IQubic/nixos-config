@@ -65,6 +65,17 @@
       # See ./hm/xmonad-config/xmonad.nix for additional config
       displayManager.defaultSession = "none+xmonad";
       windowManager.xmonad.enable = true;
+      displayManager.lightdm = {
+        enable = true;
+        greeters.gtk = {
+          enable = true;
+          cursorTheme = {
+            package = pkgs.bibata-extra-cursors;
+            name = "DodgerBlue";
+            size = 32;
+          };
+        };
+      };
     };
 
     gnome.gnome-keyring.enable = true;

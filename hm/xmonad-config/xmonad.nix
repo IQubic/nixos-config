@@ -12,4 +12,11 @@ in
     i3lock-color
     xmobar
   ];
+
+  # Set mouse cursor
+  xsession.pointerCursor = {
+    package = pkgs.bibata-extra-cursors;
+    name = "DodgerBlue";
+    size = 32;
+  };
 }

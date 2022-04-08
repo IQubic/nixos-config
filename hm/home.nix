@@ -19,6 +19,7 @@
   home.packages = with pkgs; [
     firefox-bin
     gimp
+    libreoffice
     pavucontrol
     sxiv
     wine

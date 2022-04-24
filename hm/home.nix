@@ -21,6 +21,7 @@
     gimp
     libreoffice
     pavucontrol
+    qxw
     sxiv
     wine
     zoom-us

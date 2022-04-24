@@ -63,6 +63,8 @@
  
       libinput.enable = true;
 
+      windowManager.xmonad.enable = true;
+      displayManager.defaultSession = "none+xmonad";
       displayManager.lightdm = {
         enable = true;
         greeters.gtk = {

@@ -1,8 +1,4 @@
-{ nixpkgs, flake-inputs, ...}:
-
-let
-  pkgs = flake-inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
-in
+{ pkgs, ...}:
 
 {
   environment.systemPackages = with pkgs; [

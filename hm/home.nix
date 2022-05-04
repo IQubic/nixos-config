@@ -8,6 +8,7 @@
     ./alacritty.nix
     ./plover/plover.nix
     ./powercord.nix
+    ./programming.nix
     ./dunst.nix
     ./flameshot.nix
     ./picom.nix

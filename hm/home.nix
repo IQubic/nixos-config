@@ -27,6 +27,9 @@
     zoom-us
   ];
 
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
   programs.git = {
     enable = true;
     userName = "iqubic";

@@ -37,7 +37,6 @@
       modules = [
         ./configuration.nix
         ./hardware-configuration.nix
-        ./direnv.nix
 
         # Overlays from flakes
         { nixpkgs.overlays = [ 

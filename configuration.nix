@@ -29,7 +29,6 @@
 
   environment.systemPackages = with pkgs; [
     appimage-run
-    direnv
     git
     htop
     tree

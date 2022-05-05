@@ -30,6 +30,7 @@ import XMonad.Layout.NoBorders (smartBorders, hasBorder)
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe, safeSpawn)
 import XMonad.Util.SpawnOnce
+import XMonad.Util.Hacks (javaHack)
 
 -- Use super as mod
 myModMask :: KeyMask
@@ -164,7 +165,7 @@ main :: IO ()
 main = do
     xmproc <- spawnPipe "xmobar"
 
-    let baseConfig = docks $ ewmhFullscreen $ ewmh desktopConfig
+    let baseConfig = javaHack $ docks $ ewmhFullscreen $ ewmh desktopConfig
     
     xmonad $ baseConfig
       { startupHook        = myStartupHook <> startupHook baseConfig

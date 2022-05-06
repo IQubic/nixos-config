@@ -34,6 +34,9 @@
     enable = true;
     userName = "iqubic";
     userEmail = "avi.caspe@gmail.com";
+    extraConfig = {
+      init.defaultBranch = "main";
+    };
   };
 
   home.stateVersion = "22.05";

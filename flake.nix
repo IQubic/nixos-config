@@ -39,7 +39,7 @@
           home-manager.users.avi = import ./hm/home.nix;
 
           home-manager.extraSpecialArgs = {
-            plover = inputs.plover-flake.packages;
+            plover = inputs.plover-flake.packages."x86_64-linux".plover;
           };
         }
       ];

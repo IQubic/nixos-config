@@ -11,9 +11,11 @@
 
     # Powercord
     powercord.url = "github:LavaDesu/powercord-overlay";
+    powercord.inputs.nixpkgs.follows = "nixpkgs";
 
     # Plover
     plover.url = "github:dnaq/plover-flake"; 
+    plover.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ { nixpkgs, home-manager, ... }: {

@@ -14,8 +14,8 @@
     powercord.inputs.nixpkgs.follows = "nixpkgs";
 
     # Plover
-    plover.url = "github:dnaq/plover-flake"; 
-    plover.inputs.nixpkgs.follows = "nixpkgs";
+    plover-flake.url = "github:dnaq/plover-flake"; 
+    plover-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ { nixpkgs, home-manager, ... }: {
@@ -39,7 +39,7 @@
           home-manager.users.avi = import ./hm/home.nix;
 
           home-manager.extraSpecialArgs = {
-             inherit (inputs) plover;
+            plover = inputs.plover-flake.packages;
           };
         }
       ];

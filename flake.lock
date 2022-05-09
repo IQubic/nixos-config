@@ -280,12 +280,28 @@
       }
     },
     "plover": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1647205630,
+        "narHash": "sha256-QhdiyqZh9/UX2AP4dZUKgqYWeJgn1xjpE7Q4HMke2zI=",
+        "owner": "openstenoproject",
+        "repo": "plover",
+        "rev": "2ada7c71cd25a114e1439817a44206ff0da8b70e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "openstenoproject",
+        "repo": "plover",
+        "type": "github"
+      }
+    },
+    "plover-flake": {
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": [
           "nixpkgs"
         ],
-        "plover": "plover_2",
+        "plover": "plover",
         "plover-plugins-manager": "plover-plugins-manager",
         "plover-stroke": "plover-stroke",
         "rtf-tokenize": "rtf-tokenize"
@@ -336,22 +352,6 @@
         "type": "github"
       }
     },
-    "plover_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1647205630,
-        "narHash": "sha256-QhdiyqZh9/UX2AP4dZUKgqYWeJgn1xjpE7Q4HMke2zI=",
-        "owner": "openstenoproject",
-        "repo": "plover",
-        "rev": "2ada7c71cd25a114e1439817a44206ff0da8b70e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "openstenoproject",
-        "repo": "plover",
-        "type": "github"
-      }
-    },
     "powercord": {
       "inputs": {
         "nixpkgs": [
@@ -395,7 +395,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur",
-        "plover": "plover",
+        "plover-flake": "plover-flake",
         "powercord": "powercord",
         "xmonad": "xmonad",
         "xmonad-contrib": "xmonad-contrib"

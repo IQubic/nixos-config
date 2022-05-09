@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, plover, ... }:
 
 {
   home.username = "avi";
@@ -6,7 +6,6 @@
 
   imports = [
     ./alacritty.nix
-    ./plover/plover.nix
     ./powercord.nix
     ./dunst.nix
     ./flameshot.nix
@@ -21,6 +20,7 @@
     gimp
     libreoffice
     pavucontrol
+    plover
     qxw
     sxiv
     wine

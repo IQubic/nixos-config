@@ -13,22 +13,7 @@
     powercord.url = "github:LavaDesu/powercord-overlay";
 
     # Plover
-    plover-src = { 
-      url = "github:openstenoproject/plover"; 
-      flake = false;
-    };                                                                        
-    plover-plugins-manager-src = {
-      url = "github:benoit-pierre/plover_plugins_manager";
-      flake = false;
-    };                                           
-    plover-stroke-src = {
-      url = "github:benoit-pierre/plover_stroke";
-      flake = false; 
-    };
-    rtf-tokenize-src = { 
-      url = "github:benoit-pierre/rtf_tokenize";
-      flake  = false;
-    };
+    plover.url = "github:dnaq/plover-flake"; 
   };
 
   outputs = inputs @ { nixpkgs, home-manager, ... }: {
@@ -52,10 +37,7 @@
           home-manager.users.avi = import ./hm/home.nix;
 
           home-manager.extraSpecialArgs = {
-             inherit (inputs) plover-src;
-             inherit (inputs) plover-plugins-manager-src;
-             inherit (inputs) plover-stroke-src;
-             inherit (inputs) rtf-tokenize-src;
+             inherit (inputs) plover;
           };
         }
       ];

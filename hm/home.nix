@@ -10,7 +10,7 @@
     ./dunst.nix
     ./flameshot.nix
     ./picom.nix
-    ./xmonad-config/xmonad.nix 
+    ./xmonad/xmonad.nix 
     ./zsh.nix
   ];
 

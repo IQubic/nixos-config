@@ -7,7 +7,9 @@
     xmonad.url = "github:xmonad/xmonad";
     xmonad-contrib.url = "github:xmonad/xmonad-contrib";
     home-manager.url = "github:nix-community/home-manager";
-    emacs.url = "github:nix-community/emacs-overlay";
+
+    # Doom-Emacs
+    nix-doom-emacs.url = "github:vlaci/nix-doom-emacs";
 
     # Powercord
     powercord.url = "github:LavaDesu/powercord-overlay";
@@ -39,6 +41,7 @@
           home-manager.users.avi = import ./hm/home.nix;
 
           home-manager.extraSpecialArgs = {
+            inherit (inputs) nix-doom-emacs;
             plover = inputs.plover-flake.packages."x86_64-linux".plover;
           };
         }

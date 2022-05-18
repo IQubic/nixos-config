@@ -1,4 +1,4 @@
-{ config, pkgs, plover, ... }:
+{ config, pkgs, plover, nix-doom-emacs, ... }:
 
 {
   home.username = "avi";
@@ -6,6 +6,7 @@
 
   imports = [
     ./alacritty.nix
+    ./emacs.nix
     ./powercord.nix
     ./dunst.nix
     ./flameshot.nix

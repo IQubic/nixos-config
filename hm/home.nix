@@ -1,4 +1,4 @@
-{ config, pkgs, plover, nix-doom-emacs, ... }:
+{ config, pkgs, plover, ... }:
 
 {
   home.username = "avi";
@@ -6,19 +6,17 @@
 
   imports = [
     ./alacritty.nix
-    ./emacs/emacs.nix
     ./powercord.nix
     ./dunst.nix
     ./flameshot.nix
     ./picom.nix
     ./xmonad-config/xmonad.nix 
     ./zsh.nix
-
-    nix-doom-emacs.hmModule
   ];
 
   # Packages not needed by root
   home.packages = with pkgs; [
+    emacs
     firefox-bin
     gimp
     libreoffice
@@ -32,6 +30,11 @@
 
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
+
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs;
+  };
 
   programs.git = {
     enable = true;

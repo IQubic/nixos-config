@@ -29,7 +29,6 @@ in
       config.source = ./config.el;
     };
   };
-  programs.doom-emacs.doomPrivateDir = cfg.config.dir;
   xdg.configFile."doom" = {
     source = cfg.config.dir;
     recursive = false;

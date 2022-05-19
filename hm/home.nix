@@ -20,7 +20,6 @@
 
   # Packages not needed by root
   home.packages = with pkgs; [
-    emacs
     firefox-bin
     gimp
     libreoffice

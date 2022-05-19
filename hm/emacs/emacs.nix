@@ -17,16 +17,14 @@ in
   # Enable Doom Emacs
   programs.doom-emacs = {
     enable = true;
-    doomPrivateDir = cfg.config.dir;
-  };
-
-  # Enable Doom Emacs config
-  programs.doom-emacs.config = {
-    enable = true;
-    initModules = ./init.nix;
-    modules.config.main = {
-      packages.source = ./packages.el;
-      config.source = ./config.el;
+    doomPrivateDir = cfg.config.dir;  
+    config = {
+      enable = true;
+      initModules = ./init.nix;
+      modules.config.main = {  
+        packages.source = ./packages.el;
+        config.source = ./config.el;
+      };
     };
   };
   xdg.configFile."doom" = {

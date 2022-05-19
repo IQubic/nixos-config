@@ -43,10 +43,15 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.avi = import ./hm/home.nix;
+          home-manager.users.avi = import [
+            ./hm/home.nix
+
+            # HM Modules
+            inputs.nix-doom-emacs.hmModule
+            ./hm/emacs/doom-emacs-config-module.nix
+          ];
 
           home-manager.extraSpecialArgs = {
-            inherit (inputs) nix-doom-emacs;
             plover = inputs.plover-flake.packages."x86_64-linux".plover;
           };
         }

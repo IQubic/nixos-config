@@ -20,7 +20,7 @@ in
     doomPrivateDir = cfg.config.dir;  
     config = {
       enable = true;
-      initModules = ./init.nix;
+      initModules = import ./init.nix;
       modules.config.main = {  
         packages.source = ./packages.el;
         config.source = ./config.el;

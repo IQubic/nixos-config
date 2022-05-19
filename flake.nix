@@ -8,6 +8,14 @@
     xmonad-contrib.url = "github:xmonad/xmonad-contrib";
     home-manager.url = "github:nix-community/home-manager";
 
+    # Emacs
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    nix-doom-emacs = {
+      url = "github:nix-community/nix-doom-emacs";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.emacs-overlay.follows = "emacs-overlay";
+    };
+
     # Powercord
     powercord.url = "github:LavaDesu/powercord-overlay";
     powercord.inputs.nixpkgs.follows = "nixpkgs";
@@ -38,6 +46,7 @@
           home-manager.users.avi = import ./hm/home.nix;
 
           home-manager.extraSpecialArgs = {
+            inherit (inputs) nix-doom-emacs;
             plover = inputs.plover-flake.packages."x86_64-linux".plover;
           };
         }

@@ -6,12 +6,16 @@
 
   imports = [
     ./alacritty.nix
+    ./emacs/emacs.nix
     ./powercord.nix
     ./dunst.nix
     ./flameshot.nix
     ./picom.nix
     ./xmonad/xmonad.nix 
     ./zsh.nix
+
+    # Other HM Modules
+    ./emacs/doom-emacs-module.nix
   ];
 
   # Packages not needed by root

@@ -23,7 +23,7 @@ in
   # Enable Doom Emacs config
   programs.doom-emacs.config = {
     enable = true;
-    initModules = { }; # TODO FILL THIS OUT
+    initModules = ./init.nix;
     modules.config.main = {
       packages.source = ./packages.el;
       config.source = ./config.el;

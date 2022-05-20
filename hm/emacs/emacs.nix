@@ -14,7 +14,6 @@ in
     enable = true;
   };
 
-
   # Enable Doom Emacs
   programs.doom-emacs = {
 #    enable = true;

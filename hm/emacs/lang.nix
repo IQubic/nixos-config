@@ -1,11 +1,11 @@
-# Doom Emacs config for different 
+# Doom Emacs config for
 # programming languages
 { config, lib, pkgs, ... }:
 
 {
   programs.doom-emacs.config = {
     initModules = {
-      # General programming tools
+      # General purpose programming tools
       tools = [
         { mod = "debugger"; args = [ "lsp" ]; }
         { mod = "eval"; args = [ "overlay" ]; }
@@ -19,8 +19,8 @@
       ]
     };
 
-    modules.dwarfmaster.nix.config.text = ''
-      ;; nix
+    # Nix config
+    modules.iqubic.nix.config.text = ''
       (after! nix-mode
         (add-hook! 'nix-mode-hook #'lsp!))
     '';
@@ -28,7 +28,7 @@
 
   # Packages needed for certain language modes.
   home.packages = [
-    # nix
+    # Nix
     rnix-lsp
     nixfmt
   ];

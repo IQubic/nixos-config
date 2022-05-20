@@ -16,7 +16,7 @@ in
 
   # Enable Doom Emacs
   programs.doom-emacs = {
-    enable = true;
+#    enable = true;
     doomPrivateDir = cfg.config.dir;  
     config = {
       enable = true;

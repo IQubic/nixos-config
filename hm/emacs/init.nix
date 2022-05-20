@@ -28,6 +28,7 @@
 
   lang = [
     "emacs-lisp"
+    "org"
     "sh"
   ];
 
@@ -38,5 +39,9 @@
     { mod = "emoji"; args = [ "github" "unicode" ]; }
     "hydra"
     "modeline"
+  ];
+
+  tools = [
+    "magit"
   ];
 }

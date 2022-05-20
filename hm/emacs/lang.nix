@@ -1,6 +1,6 @@
 # Doom Emacs config for
 # programming languages
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.doom-emacs.config = {
@@ -14,9 +14,9 @@
       ];
 
       lang = [
-        { mod = "haskell"; args = [ "lsp" ]; 
+        { mod = "haskell"; args = [ "lsp" ]; } 
         "nix"
-      ]
+      ];
     };
 
     # Nix config
@@ -27,7 +27,7 @@
   };
 
   # Packages needed for certain language modes.
-  home.packages = [
+  home.packages = with pkgs; [
     # Nix
     rnix-lsp
     nixfmt

@@ -7,14 +7,18 @@ in
     enable = true;
 
     windowManager.command = "${xmonadConfig}/bin/xmonad-config";
+  };
 
-    # Set mouse cursor
-    pointerCursor = {
-      package = pkgs.bibata-extra-cursors;
-      name = "Bibata-Modern-DodgerBlue";
+  # Set mouse cursor
+  home.pointerCursor = {
+    x11 = {
+      enable = true;
       defaultCursor = "left_ptr";
-      size = 32;
     };
+    gtk.enable = true;
+    package = pkgs.bibata-extra-cursors;
+    name = "Bibata-Modern-DodgerBlue";
+    size = 32;
   };
 
   # Allow XMonad to find my specific config

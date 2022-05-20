@@ -14,6 +14,7 @@ in
     enable = true;
   };
 
+
   # Enable Doom Emacs
   programs.doom-emacs = {
 #    enable = true;
@@ -27,6 +28,8 @@ in
       };
     };
   };
+  imports = [ ./lang.nix ];
+
   xdg.configFile."doom" = {
     source = cfg.config.dir;
     recursive = false;

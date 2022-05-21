@@ -13,6 +13,8 @@ in
   programs.emacs = {
     enable = true;
   };
+  # Systemd service
+  services.emacs.enable = true;
 
   # Enable Doom Emacs
   programs.doom-emacs = {
@@ -44,25 +46,4 @@ in
     aspell
     (hunspellWithDicts (with hunspellDicts; [ en_US ]))
   ];
-
-  # Systemd daemon
-#  systemd.user.services.doom-emacs-daemon = {
-#    Unit = {
-#      Description = "Doom Emacs Server Daemon";
-#      Documentation = [ "info:emacs" "man:emacs(1)" "https://gnu.org/software/emacs/" ];
-#      After = [ "graphical-session-pre.target" ];
-#      PartOf = [ "graphical-session.target" ];
-#    };
-
-#    Service = {
-#      Type = "notify";
-#      ExecStart = "${pkgs.runtimeShell} -l -c '${emacs} --fg-daemon'";
-#      SuccessExitStatus=15;
-#      Restart = "on-failure";
-#    };
-
-#    Install = {
-#      WantedBy = [ "graphical-session.target" ];
-#    };
-#  };
 }

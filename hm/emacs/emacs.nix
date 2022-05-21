@@ -29,6 +29,7 @@ in
   };
   imports = [ ./lang.nix ];
 
+  home.sessionPath = [ "$HOME/.emacs.d/bin" ];
   xdg.configFile."doom" = {
     source = cfg.config.dir;
     recursive = false;

@@ -17,25 +17,25 @@ in
   services.emacs.enable = true;
 
   # Enable Doom Emacs
-  programs.doom-emacs = {
+#  programs.doom-emacs = {
 #    enable = true;
-    doomPrivateDir = cfg.config.dir;  
-    config = {
-      enable = true;
-      initModules = import ./init.nix;
-      modules.config.main = {  
-        packages.source = ./packages.el;
-        config.source = ./config.el;
-      };
-    };
-  };
-  imports = [ ./lang.nix ];
+#    doomPrivateDir = cfg.config.dir;  
+#    config = {
+#      enable = true;
+#      initModules = import ./init.nix;
+#      modules.config.main = {  
+#        packages.source = ./packages.el;
+#        config.source = ./config.el;
+#      };
+#    };
+#  };
+#  imports = [ ./lang.nix ];
 
   home.sessionPath = [ "$HOME/.emacs.d/bin" ];
-  xdg.configFile."doom" = {
-    source = cfg.config.dir;
-    recursive = false;
-  };  
+#  xdg.configFile."doom" = {
+#    source = cfg.config.dir;
+#    recursive = false;
+#  };  
 
   # Packages required for Doom Emacs
   home.packages = with pkgs; [

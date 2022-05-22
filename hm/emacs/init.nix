@@ -4,7 +4,7 @@
   ];
 
   completion = [
-    { mod = "helm"; args = [ "fuzzy" ]; }
+    { mod = "vertico"; args = [ "icons" ]; }
     { mod = "company"; args = [ "tng" ]; }
   ];
 

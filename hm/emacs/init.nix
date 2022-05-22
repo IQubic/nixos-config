@@ -35,7 +35,6 @@
   ui = [
     "doom"
     "doom-dashboard"
-    "doom-quit"
     { mod = "emoji"; args = [ "github" "unicode" ]; }
     "hydra"
     "modeline"

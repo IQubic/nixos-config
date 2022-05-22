@@ -18,6 +18,11 @@
         "nix"
       ];
     };
+    # LSP config
+    modules.iqubic.lsp.config.text = ''
+      (after! lsp-ui
+        (setq lsp-ui-doc-show-with-cursor t))
+    '';
 
     # Nix config
     modules.iqubic.nix.config.text = ''

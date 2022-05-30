@@ -25,6 +25,7 @@
     qxw
     sxiv
     wine
+    qmk
     zoom-us
   ];
 

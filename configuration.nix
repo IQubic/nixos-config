@@ -77,9 +77,9 @@
         };
       };
     };
-
     gnome.gnome-keyring.enable = true;
     upower.enable = true;
+    udev.packages = [ pkgs.qmk-udev-rules ];
 
     dbus = {
       enable = true;

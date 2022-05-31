@@ -35,6 +35,7 @@
     vim
     wget
     unzip
+    usbutils
     zip
   ];
   nixpkgs.config.allowUnfree = true;

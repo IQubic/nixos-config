@@ -24,6 +24,7 @@
     plover
     qxw
     sxiv
+    vlc
     wine
     zoom-us
   ];

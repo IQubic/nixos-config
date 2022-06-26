@@ -24,6 +24,7 @@
     plover
     qxw
     sxiv
+    tenacity
     vlc
     wine
     zoom-us

@@ -28,6 +28,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    acpi
     appimage-run
     git
     htop

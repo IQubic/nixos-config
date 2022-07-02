@@ -4,8 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
-    xmonad.url = "github:xmonad/xmonad";
-    xmonad-contrib.url = "github:xmonad/xmonad-contrib";
     home-manager.url = "github:nix-community/home-manager";
 
     # Emacs
@@ -34,8 +32,6 @@
 
         # Overlays from flakes
         { nixpkgs.overlays = [ 
-            inputs.xmonad.overlay 
-            inputs.xmonad-contrib.overlay 
             inputs.powercord.overlay
           ]; 
         }

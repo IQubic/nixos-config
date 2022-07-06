@@ -20,7 +20,6 @@
     firefox-bin
     gimp
     libreoffice
-    love
     pavucontrol
     plover
     qxw

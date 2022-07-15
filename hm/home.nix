@@ -17,6 +17,7 @@
 
   # Packages not needed by root
   home.packages = with pkgs; [
+    chromium
     firefox-bin
     gimp
     libreoffice

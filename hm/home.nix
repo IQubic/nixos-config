@@ -22,6 +22,7 @@
     gimp
     libreoffice
     pavucontrol
+    pcmanfm
     plover
     qxw
     sxiv

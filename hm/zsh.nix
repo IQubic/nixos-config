@@ -3,6 +3,10 @@
   programs.zsh = {
     enable = true;
 
+    envExtra = ''
+      export PATH=$PATH:$HOME/.local/bin
+    '';
+
     shellAliases = {
       # colorize grep output
       grep  = "grep  --color=auto";

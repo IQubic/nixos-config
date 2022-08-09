@@ -24,7 +24,6 @@
     pavucontrol
     pcmanfm
     plover
-    python310Packages.pipx
     qxw
     sxiv
     tenacity

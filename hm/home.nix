@@ -25,6 +25,7 @@
     pcmanfm
     plover
     qxw
+    simplescreenrecorder
     sxiv
     tenacity
     vlc

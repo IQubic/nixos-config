@@ -21,6 +21,7 @@
     firefox-bin
     gimp
     libreoffice
+    minecraft
     pavucontrol
     pcmanfm
     plover

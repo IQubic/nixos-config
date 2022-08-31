@@ -22,7 +22,6 @@
     gimp
     libreoffice
     minecraft
-    openmw
     pavucontrol
     pcmanfm
     plover

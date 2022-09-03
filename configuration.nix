@@ -37,7 +37,7 @@
     wget
     unzip
     usbutils
-    xev
+    xorg.xev
     zip
   ];
   nixpkgs.config.allowUnfree = true;

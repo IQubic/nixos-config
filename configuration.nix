@@ -58,7 +58,7 @@
     experimental-features = nix-command flakes
   '';
 
-  # Throttle CPU if too hot
+  # Throttle an Intel CPU if too hot
   services.thermald.enable = true;
 
   # Enable the X11 windowing system.

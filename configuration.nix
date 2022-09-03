@@ -38,6 +38,7 @@
     unzip
     usbutils
     xorg.xev
+    xorg.xmodmap
     zip
   ];
   nixpkgs.config.allowUnfree = true;

@@ -32,7 +32,7 @@
     appimage-run
     git
     htop
-    lm-sensors
+    lm_sensors
     tree
     vim
     wget

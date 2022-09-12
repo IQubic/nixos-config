@@ -41,11 +41,11 @@
     enableBashIntegration = true;
     enableZshIntegration = true;
   };
-  programs.doom-emacs.config = {
-    initModules = {
-      tools = [ "direnv" ];
-    };
-  };
+#  programs.doom-emacs.config = {
+#    initModules = {
+#      tools = [ "direnv" ];
+#    };
+#  };
 
   programs.git = {
     enable = true;

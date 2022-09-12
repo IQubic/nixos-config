@@ -8,15 +8,15 @@
 
     # Emacs
     emacs-overlay.url = "github:nix-community/emacs-overlay";
-    nix-doom-emacs = {
-      url = "github:nix-community/nix-doom-emacs";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.emacs-overlay.follows = "emacs-overlay";
-    };
+#    nix-doom-emacs = {
+#      url = "github:nix-community/nix-doom-emacs";
+#      inputs.nixpkgs.follows = "nixpkgs";
+#      inputs.emacs-overlay.follows = "emacs-overlay";
+#    };
 
-    # Powercord
-    powercord.url = "github:LavaDesu/powercord-overlay";
-    powercord.inputs.nixpkgs.follows = "nixpkgs";
+    # Replugged
+    inputs.replugged.url = "github:LunNova/replugged-nix-flake"
+    replugged.inputs.nixpkgs.follows = "nixpkgs";
 
     # Plover
     plover-flake.url = "github:dnaq/plover-flake"; 
@@ -32,7 +32,7 @@
 
         # Overlays from flakes
         { nixpkgs.overlays = [ 
-            inputs.powercord.overlay
+            inputs.replugged.overlay
           ]; 
         }
 

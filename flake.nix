@@ -14,9 +14,9 @@
 #      inputs.emacs-overlay.follows = "emacs-overlay";
 #    };
 
-    # Replugged
-    inputs.replugged.url = "github:LunNova/replugged-nix-flake";
-    replugged.inputs.nixpkgs.follows = "nixpkgs";
+    # Auto updating Discord overlay
+    discord.url = "github:InternetUnexplorer/discord-overlay";    
+    discord.inputs.nixpkgs.follows = "nixpkgs";
 
     # Plover
     plover-flake.url = "github:dnaq/plover-flake"; 
@@ -31,10 +31,9 @@
         ./hardware-configuration.nix
 
         # Overlays from flakes
-        { nixpkgs.overlays = [ 
-            inputs.replugged.overlay
-          ]; 
-        }
+        { nixpkgs.overlays = [
+          inputs.discord.overlay
+        ]};
 
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;

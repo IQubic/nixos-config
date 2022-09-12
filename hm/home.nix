@@ -7,7 +7,6 @@
   imports = [
     ./alacritty.nix
     ./emacs/emacs.nix
-    ./powercord.nix
     ./dunst.nix
     ./flameshot.nix
     ./picom.nix
@@ -18,6 +17,7 @@
   # Packages not needed by root
   home.packages = with pkgs; [
     chromium
+    discord-canary
     firefox-bin
     gimp
     libreoffice

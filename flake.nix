@@ -15,7 +15,7 @@
 #    };
 
     # Replugged
-    inputs.replugged.url = "github:LunNova/replugged-nix-flake"
+    inputs.replugged.url = "github:LunNova/replugged-nix-flake";
     replugged.inputs.nixpkgs.follows = "nixpkgs";
 
     # Plover

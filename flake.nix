@@ -33,7 +33,7 @@
         # Overlays from flakes
         { nixpkgs.overlays = [
           inputs.discord.overlay
-        ]};
+        ];}
 
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
@@ -42,8 +42,8 @@
             ./hm/home.nix
 
             # HM Modules
-            inputs.nix-doom-emacs.hmModule
-            ./hm/emacs/doom-emacs-config-module.nix
+            #inputs.nix-doom-emacs.hmModule
+            #./hm/emacs/doom-emacs-config-module.nix
           ];
           home-manager.extraSpecialArgs = {
             plover = inputs.plover-flake.packages."x86_64-linux".plover;

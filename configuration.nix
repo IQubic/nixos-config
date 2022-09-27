@@ -30,6 +30,7 @@
   environment.systemPackages = with pkgs; [
     acpi
     appimage-run
+    file
     git
     htop
     lm_sensors

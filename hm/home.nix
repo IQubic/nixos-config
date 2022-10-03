@@ -24,6 +24,7 @@
     minecraft
     pavucontrol
     pcmanfm
+    picat
     plover
     qxw
     simplescreenrecorder

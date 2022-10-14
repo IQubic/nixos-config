@@ -32,6 +32,7 @@
     tenacity
     vlc
     wine
+    xboxdrv
     zoom-us
   ];
 

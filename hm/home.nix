@@ -20,6 +20,7 @@
     discord-canary
     firefox-bin
     gimp
+    joycond
     libreoffice
     minecraft
     pavucontrol

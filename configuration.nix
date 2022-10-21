@@ -33,6 +33,7 @@
     file
     git
     htop
+    linuxKernel.packages.linux_5_15.hid-nintendo
     lm_sensors
     tree
     vim

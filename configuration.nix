@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  # Use latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -33,13 +36,14 @@
     file
     git
     htop
-    linuxKernel.packages.linux_5_15.hid-nintendo
+    joycond
     lm_sensors
     tree
     vim
     wget
     unzip
     usbutils
+    xboxdrv
     xorg.xev
     xorg.xmodmap
     zip

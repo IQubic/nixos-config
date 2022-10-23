@@ -20,7 +20,6 @@
     discord-canary
     firefox-bin
     gimp
-    joycond
     libreoffice
     minecraft
     pavucontrol
@@ -33,7 +32,6 @@
     tenacity
     vlc
     wine
-    xboxdrv
     zoom-us
   ];
 

@@ -36,7 +36,6 @@
     file
     git
     htop
-    joycond
     lm_sensors
     tree
     vim
@@ -49,9 +48,13 @@
     zip
   ];
   nixpkgs.config.allowUnfree = true;
-  
+
+  # Enable Steam  
   programs.steam.enable = true;
   hardware.steam-hardware.enable = true;
+
+  # Enable Joycond
+  services.joycond.enable = true;
 
   # Flatpak
   services.flatpak.enable = true;

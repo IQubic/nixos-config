@@ -20,6 +20,8 @@
     discord-canary
     firefox-bin
     gimp
+    hunspell
+    hunspellDicts.en-us-large
     libreoffice
     minecraft
     pavucontrol

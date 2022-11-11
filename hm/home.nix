@@ -16,6 +16,7 @@
 
   # Packages not needed by root
   home.packages = with pkgs; [
+    awscli
     chromium
     discord-canary
     firefox-bin

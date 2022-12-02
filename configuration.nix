@@ -35,6 +35,7 @@
     appimage-run
     file
     git
+    gnutls
     htop
     lm_sensors
     tree

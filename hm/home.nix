@@ -16,12 +16,13 @@
 
   # Packages not needed by root
   home.packages = with pkgs; [
+    aspellDicts.en
+    aspellDicts.en-computers
     awscli
     chromium
     discord-canary
     firefox-bin
     gimp
-    hunspellDicts.en-us-large
     libreoffice
     minecraft
     pavucontrol

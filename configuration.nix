@@ -76,8 +76,8 @@
     xserver = {
       enable = true;
 
-      layout = "us,gr";
-      xkbOptions = "caps:escape,grp:shifts_toggle,grp_led:caps";
+      layout = "us";
+      xkbOptions = "caps:escape";
  
       libinput.enable = true;
 

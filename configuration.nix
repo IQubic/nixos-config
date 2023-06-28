@@ -88,8 +88,8 @@
         greeters.gtk = {
           enable = true;
           cursorTheme = {
-            package = pkgs.bibata-extra-cursors;
-            name = "Bibata-Modern-DodgerBlue";
+            package = pkgs.bibata-cursors;
+            name = "Bibata-Modern-Classic";
             size = 32;
           };
         };
@@ -130,9 +130,9 @@
       "systemd-journal"
     ];
   };
+  programs.zsh.enable = true;
   # For ZSH auto completion
   environment.pathsToLink = [ "/share/zsh" ];
 
   system.stateVersion = "21.11";
 }
-

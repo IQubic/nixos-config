@@ -18,15 +18,12 @@
   home.packages = with pkgs; [
     aspellDicts.en
     aspellDicts.en-computers
-    awscli
     chromium
     discord-canary
     firefox-bin
     gimp
     libreoffice
-    minecraft
     pavucontrol
-    pcmanfm
     picat
     plover
     qxw

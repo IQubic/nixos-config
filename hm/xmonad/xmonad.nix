@@ -16,8 +16,8 @@ in
       defaultCursor = "left_ptr";
     };
     gtk.enable = true;
-    package = pkgs.bibata-extra-cursors;
-    name = "Bibata-Modern-DodgerBlue";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
     size = 32;
   };
 

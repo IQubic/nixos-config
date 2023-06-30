@@ -19,7 +19,7 @@
     discord.inputs.nixpkgs.follows = "nixpkgs";
 
     # Plover
-    plover-flake.url = "github:dnaq/plover-flake"; 
+    plover-flake.url = "path:/etc/nixos/plover-flake"; 
     plover-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -46,7 +46,15 @@
             #./hm/emacs/doom-emacs-config-module.nix
           ];
           home-manager.extraSpecialArgs = {
-            plover = inputs.plover-flake.packages."x86_64-linux".plover;
+            plover = inputs.plover-flake.packages."x86_64-linux".plover.with-plugins (ps: with ps; [
+              plover_emoji
+              plover_number_format
+              plover_retro_everything
+              plover_retro_surround
+              plover_retro_text_transform
+              plover-rpn-calculator
+#              plover_vim
+            ]);
           };
         }
       ];

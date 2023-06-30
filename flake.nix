@@ -47,6 +47,8 @@
           ];
           home-manager.extraSpecialArgs = {
             plover = inputs.plover-flake.packages."x86_64-linux".plover.with-plugins (ps: with ps; [
+              plover_python_dictionary
+
               plover_emoji
               plover_number_format
               plover_retro_everything

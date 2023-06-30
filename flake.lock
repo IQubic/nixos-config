@@ -160,11 +160,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1688157927,
-        "narHash": "sha256-MDR97T4xsFIfUnUc7bZrHphIeTw2nOuylXGF4Pio2UY=",
+        "lastModified": 1688164208,
+        "narHash": "sha256-SZn8ze8sjm4Hv4qg3l4RbmU/WU8jOq0ixhiB+J6Yu9I=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "8fe50d4640d8204aae7bc15ca7572f3897c2cb6b",
+        "rev": "faafe2547cc468f586f125c4746aa0d5b6eefcc0",
         "type": "github"
       },
       "original": {
@@ -202,8 +202,8 @@
         "rtf-tokenize": "rtf-tokenize"
       },
       "locked": {
-        "lastModified": 1688160088,
-        "narHash": "sha256-sDYjyB5P2C4OhiW1Dxnma0OvqVyBwB4/lMYpc+QBV9M=",
+        "lastModified": 1688165670,
+        "narHash": "sha256-FBFCwdfvWb1XmPHSGNWqFYmLt/dKmEacaRjkZsduJBQ=",
         "path": "/etc/nixos/plover-flake",
         "type": "path"
       },

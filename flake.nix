@@ -53,7 +53,8 @@
               plover_retro_surround
               plover_retro_text_transform
               plover-rpn-calculator
-#              plover_vim
+              plover_stenotype_vim
+              plover_vim
             ]);
           };
         }

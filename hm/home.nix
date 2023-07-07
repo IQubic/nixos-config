@@ -22,6 +22,7 @@
     discord-canary
     firefox-bin
     gimp
+    google-chrome
     libreoffice
     pavucontrol
     picat

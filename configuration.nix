@@ -73,6 +73,7 @@
 
   # Enable Docker
   virtualisation.docker.enable = true;
+  virtualisation.docker.storageDriver = "btrfs";
 
   # Enable the X11 windowing system.
   services = {

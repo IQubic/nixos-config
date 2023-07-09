@@ -71,6 +71,9 @@
   # Throttle an Intel CPU if too hot
   services.thermald.enable = true;
 
+  # Enable Docker
+  virtualisation.docker.enable = true;
+
   # Enable the X11 windowing system.
   services = {
     xserver = {
@@ -116,7 +119,6 @@
   hardware.bluetooth.settings.General.Experimental = true;
   services.blueman.enable = true;
 
-
   systemd.services.upower.enable = true;
 
   # Users
@@ -130,6 +132,7 @@
       "video"
       "dialout"
       "systemd-journal"
+      "docker"
     ];
   };
   programs.zsh.enable = true;

@@ -56,6 +56,7 @@
               plover_retro_text_transform
               plover-rpn-calculator
               plover_stenotype_vim
+              plover-stitching
               plover_vim
             ]);
           };

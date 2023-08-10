@@ -21,6 +21,7 @@
     chromium
     discord-canary
     firefox-bin
+    forge-mtg
     gimp
     google-chrome
     libreoffice

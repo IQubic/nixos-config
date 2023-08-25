@@ -21,7 +21,6 @@
     chromium
     discord-canary
     firefox-bin
-    forge-mtg
     gimp
     google-chrome
     libreoffice
@@ -29,6 +28,7 @@
     picat
     plover
     qxw
+    scarab
     simplescreenrecorder
     sxiv
     tenacity

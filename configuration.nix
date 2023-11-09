@@ -3,6 +3,7 @@
 {
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelModules = ["hid-nintendo"];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -37,6 +38,7 @@
     git
     gnutls
     htop
+    joycond
     lm_sensors
     tree
     vim

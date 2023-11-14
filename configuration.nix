@@ -40,6 +40,7 @@
     htop
     joycond
     lm_sensors
+    nixfmt
     tree
     vim
     wget

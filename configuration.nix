@@ -29,6 +29,9 @@
     noto-fonts-cjk
     noto-fonts-emoji
     hack-font
+    (pkgs.nerdfonts.override {
+      fonts = [ "Hack" ];
+    })
   ];
 
   environment.systemPackages = with pkgs; [

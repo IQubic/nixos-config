@@ -34,6 +34,7 @@
     })
   ];
 
+  # Core system utils
   environment.systemPackages = with pkgs; [
     acpi
     appimage-run
@@ -74,8 +75,8 @@
     experimental-features = nix-command flakes
   '';
 
-  # Throttle an Intel CPU if too hot
-  services.thermald.enable = true;
+  # SSH
+  services.openssh.enable = true;
 
   # Enable Docker
   virtualisation.docker.enable = true;

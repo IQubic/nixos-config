@@ -15,6 +15,8 @@
 
   # Enable Virtualisation
   virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.guest.enable = true;
+  nixpkgs.config.virtualbox.enableExtensionPack = true;  
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";

@@ -190,6 +190,7 @@
       "dialout"
       "systemd-journal"
       "docker"
+      "vboxusers"
     ];
   };
   programs.zsh.enable = true;

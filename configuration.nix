@@ -13,6 +13,9 @@
   networking.hostName = "LATITUDE-NIXOS"; 
   networking.networkmanager.enable = true;
 
+  # Enable Virtualisation
+  virtualisation.virtualbox.host.enable = true;
+
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 

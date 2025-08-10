@@ -13,11 +13,6 @@
   networking.hostName = "LATITUDE-NIXOS"; 
   networking.networkmanager.enable = true;
 
-  # Enable Virtualisation
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.guest.enable = true;
-  nixpkgs.config.virtualbox.enableExtensionPack = true;  
-
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
@@ -61,6 +56,7 @@
     nixfmt-rfc-style
     pamixer
     pciutils
+    qemu
     ripgrep
     tree
     vim
@@ -192,7 +188,6 @@
       "dialout"
       "systemd-journal"
       "docker"
-      "vboxusers"
     ];
   };
   programs.zsh.enable = true;

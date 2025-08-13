@@ -86,7 +86,7 @@ myStartupHook = do
 
 -- Layouts are dumb when it comes to type signatures
 myLayoutHook = onWorkspace "1" tabs $
-               toggleLayouts (Full ||| noBorders Simplest) (tall ||| Mirror tall ||| tabs)
+               toggleLayouts (Full ||| Simplest) (tall ||| Mirror tall ||| tabs)
   where
     tall = Tall 1 (3/100) (1/2)
     tabs = named "Tabbed" $ tabbed shrinkText myTabConfig
@@ -155,7 +155,6 @@ myKeys =
     , ("M-<Return>", spawn $ myTerminal Nothing)
     , ("M-b", spawn myBrowser)
     , ("M-p", spawn "Discord")
-    , ("M-C-S-e", spawn "smile")
 
     -- Kill Windows
     , ("M-S-c", kill1)     -- Kill the currently focused client
@@ -188,7 +187,6 @@ myKeys =
     -- Scratchpads
     , ("M-w", namedScratchpadAction scratchpads "terminal")
     , ("M-e", namedScratchpadAction scratchpads "emacs")
-    , ("M-d", namedScratchpadAction scratchpads "pithos")
 
     -- System
     , ("M-C-l",                   unGrab >> spawn "i3lock-color --color=833993")
@@ -234,7 +232,7 @@ main = do
            , handleEventHook    = myHandleEventHook <> fixSteamFlicker
            , logHook            = logLayoutToPolybar
            , manageHook         = myManageHook
-           , layoutHook         = avoidStruts $ smartBorders $ windowNavigation $ myLayoutHook
+           , layoutHook         = avoidStruts $ smartnBorders $ windowNavigation $ myLayoutHook
            , modMask            = myModMask
            , terminal           = myTerminal Nothing
            , normalBorderColor  = catBase

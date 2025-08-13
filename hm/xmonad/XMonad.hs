@@ -24,6 +24,7 @@ import XMonad.Layout.WindowNavigation
 import XMonad.Layout.Renamed
 import XMonad.Layout.ToggleLayouts
 import XMonad.Layout.Tabbed
+import XMonad.Layout.Simplest
 import XMonad.Layout.NoBorders (smartBorders, hasBorder)
 
 -- Prompt
@@ -85,7 +86,7 @@ myStartupHook = do
 
 -- Layouts are dumb when it comes to type signatures
 myLayoutHook = onWorkspace "1" tabs $
-               toggleLayouts Full $ tall ||| Mirror tall ||| tabs
+               toggleLayouts (Full ||| Simplest) (tall ||| Mirror tall ||| tabs)
   where
     tall = Tall 1 (3/100) (1/2)
     tabs = named "Tabbed" $ tabbed shrinkText myTabConfig

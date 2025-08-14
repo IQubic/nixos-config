@@ -21,6 +21,7 @@
   home.packages = with pkgs; [
     alsa-utils
     archipelago
+    arrpc
     bqnlsp
     cbqn-replxx
     cockatrice

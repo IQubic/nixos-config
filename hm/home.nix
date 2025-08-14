@@ -21,15 +21,11 @@
   home.packages = with pkgs; [
     alsa-utils
     archipelago
-    betterdiscordctl
     bqnlsp
     cbqn-replxx
     cockatrice
     chromium
     dfu-util
-    (discord.override {
-      withOpenASAR = true;
-    })
     emote
     ffmpeg
     firefox
@@ -49,6 +45,7 @@
     sxiv
     tenacity
     uiua
+    vesktop
     vlc
     winePackages.stagingFull
     winetricks

@@ -154,7 +154,7 @@ myKeys =
     -- Useful programs to have a keybinding for launch
     , ("M-<Return>", spawn $ myTerminal Nothing)
     , ("M-b", spawn myBrowser)
-    , ("M-p", spawn "vesktop")
+    , ("M-p", spawn "discord")
 
     -- Kill Windows
     , ("M-S-c", kill1)     -- Kill the currently focused client

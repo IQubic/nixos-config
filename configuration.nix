@@ -47,7 +47,7 @@
     appimage-run
     fd
     file
-    git
+    gitFull
     gnutls
     htop
     inxi

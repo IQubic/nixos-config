@@ -56,7 +56,6 @@
     nixfmt-rfc-style
     pamixer
     pciutils
-    qemu
     ripgrep
     tree
     vim

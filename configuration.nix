@@ -60,6 +60,7 @@
     ripgrep
     tree
     vim
+    virtiofsd
     wget
     unzip
     usbutils

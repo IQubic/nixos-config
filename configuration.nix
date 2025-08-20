@@ -56,6 +56,7 @@
     nixfmt-rfc-style
     pamixer
     pciutils
+    qemu
     ripgrep
     tree
     vim
@@ -97,9 +98,10 @@
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
 
-  # Enable libvirt
+  # Enable libvirt and virt-manager
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
+  programs.virt-manager.enable = true;
 
   # Ignore the power switch being pressed
   services.logind.powerKey = "ignore";

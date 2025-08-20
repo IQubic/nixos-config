@@ -49,7 +49,6 @@
     sxiv
     tenacity
     uiua
-    virt-manager
     vlc
     winePackages.stagingFull
     winetricks

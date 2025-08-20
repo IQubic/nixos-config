@@ -25,10 +25,6 @@
     keyMap = "us";
   };
 
-  # Add Virtualbox
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-
   # Theme the tty
   catppuccin.flavor = "mocha";
   catppuccin.tty.enable = true;
@@ -101,6 +97,10 @@
   # Enable Docker
   virtualisation.docker.enable = true;
   virtualisation.docker.storageDriver = "btrfs";
+
+  # Enable libvirt
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # Ignore the power switch being pressed
   services.logind.powerKey = "ignore";
@@ -192,7 +192,7 @@
       "dialout"
       "systemd-journal"
       "docker"
-      "vboxusers"
+      "libvirtd"
     ];
   };
   programs.zsh.enable = true;

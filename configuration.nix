@@ -25,6 +25,10 @@
     keyMap = "us";
   };
 
+  # Add Virtualbox
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+
   # Theme the tty
   catppuccin.flavor = "mocha";
   catppuccin.tty.enable = true;
@@ -188,6 +192,7 @@
       "dialout"
       "systemd-journal"
       "docker"
+      "vboxusers"
     ];
   };
   programs.zsh.enable = true;

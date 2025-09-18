@@ -15,7 +15,8 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks (avoidStruts, docks)
 import XMonad.Hooks.WindowSwallowing
 import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
-import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.StatusBar
+import XMonad.Hooks.StatusBar.PP
 import XMonad.Hooks.SetWMName
 
 -- Layouts
@@ -213,29 +214,35 @@ myKeys =
 myHandleEventHook :: Event -> X All
 myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
 
--- Tell polybar the current layout
--- NOTE: Only works on single headed systems
-logLayoutToPolybar :: X ()
-logLayoutToPolybar = withWindowSet $ \winset -> do
-  let ld = description . W.layout . W.workspace . W.current $ winset
-  spawn $ "polybar-msg action \"#layout.send." ++ ld ++ "\""
+barSpawner :: ScreenId -> X StatusBarConfig
+barSpawner _ = statusBarPipe "xmobar" (pure myXMobarPP)
+
+myXMobarPP :: PP
+myXMobarPP = def { ppCurrent          = wrap "[" "]"
+                 , ppVisible          = wrap "<" ">"
+                 , ppHiddenNoWindows  = const ""
+                 , ppVisibleNoWindows = Nothing
+                 , ppUrgent           = id
+                 , ppSep              = "  "
+                 , ppWsSep            = " "
+                 , ppTitle            = shorten 40
+                 , ppSort             = pure $ filterOutWs [scratchpadWorkspaceTag]
+                 }
 
 main :: IO ()
 main = do
-    let myFilter = pure $ filterOutWs [scratchpadWorkspaceTag]
     xmonad $ javaHack
+           $ dynamicSBs barSpawner
            $ docks
-           $ addEwmhWorkspaceSort myFilter
            $ ewmhFullscreen
-           $ ewmh def
-           { startupHook        = myStartupHook
-           , handleEventHook    = myHandleEventHook <> fixSteamFlicker
-           , logHook            = logLayoutToPolybar
-           , manageHook         = myManageHook
-           , layoutHook         = avoidStruts $ smartBorders $ windowNavigation $ myLayoutHook
-           , modMask            = myModMask
-           , terminal           = myTerminal Nothing
-           , normalBorderColor  = catBase
-           , focusedBorderColor = catSapphire
-           , borderWidth        = 3
-           } `additionalKeysP` myKeys
+           $ ewmh
+           def { startupHook        = myStartupHook
+               , handleEventHook    = myHandleEventHook <> fixSteamFlicker
+               , manageHook         = myManageHook
+               , layoutHook         = avoidStruts $ smartBorders $ windowNavigation $ myLayoutHook
+               , modMask            = myModMask
+               , terminal           = myTerminal Nothing
+               , normalBorderColor  = catBase
+               , focusedBorderColor = catSapphire
+               , borderWidth        = 3
+               } `additionalKeysP` myKeys

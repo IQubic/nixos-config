@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  imports = [ ./polybar.nix ./theme.nix ];
+  imports = [ ./xmobar.nix ./theme.nix ];
 
   xsession = {
     enable = true;

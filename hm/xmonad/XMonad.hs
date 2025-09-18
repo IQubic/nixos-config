@@ -185,8 +185,8 @@ myKeys =
     , ("M-i", spawn "doom +everywhere")
 
     -- Scratchpads
-    , ("M-w", namedScratchpadAction scratchpads "terminal")
-    , ("M-e", namedScratchpadAction scratchpads "emacs")
+    , ("M-z", namedScratchpadAction scratchpads "terminal")
+    , ("M-x", namedScratchpadAction scratchpads "emacs")
 
     -- System
     , ("M-C-l",                   unGrab >> spawn "i3lock-color --color=833993")

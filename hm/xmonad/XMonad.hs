@@ -83,8 +83,6 @@ myStartupHook = do
     -- Hack to make Java programs work properly
     setWMName "LG3D"
 
-    spawn "polybar main"
-
 -- Layouts are dumb when it comes to type signatures
 myLayoutHook = onWorkspace "1" tabs $
                toggleLayouts (Full ||| Simplest) (tall ||| Mirror tall ||| tabs)
@@ -215,19 +213,19 @@ myHandleEventHook :: Event -> X All
 myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
 
 barSpawner :: ScreenId -> X StatusBarConfig
-barSpawner _ = statusBarPipe "xmobar" (pure myXMobarPP)
+barSpawner _ = pure $ statusBarPropTo "_XMONAD_LOG_1" "xmobar -x 0 ~/.config/xmobar/xmobarrc_main" (pure ppMain)
 
-myXMobarPP :: PP
-myXMobarPP = def { ppCurrent          = wrap "[" "]"
-                 , ppVisible          = wrap "<" ">"
-                 , ppHiddenNoWindows  = const ""
-                 , ppVisibleNoWindows = Nothing
-                 , ppUrgent           = id
-                 , ppSep              = "  "
-                 , ppWsSep            = " "
-                 , ppTitle            = shorten 40
-                 , ppSort             = pure $ filterOutWs [scratchpadWorkspaceTag]
-                 }
+ppMain :: PP
+ppMain = def { ppCurrent          = wrap "[" "]"
+             , ppVisible          = wrap "<" ">"
+             , ppHiddenNoWindows  = const ""
+             , ppVisibleNoWindows = Nothing
+             , ppUrgent           = id
+             , ppSep              = "  "
+             , ppWsSep            = " "
+             , ppTitle            = shorten 40
+             , ppSort             = pure $ filterOutWs [scratchpadWorkspaceTag]
+             }
 
 main :: IO ()
 main = do

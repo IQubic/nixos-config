@@ -21,17 +21,17 @@
            , commands = [ Run Date "<fc=#cba6f7>%a %b %e - %H:%M:%S</fc>" "date" 10
                         , Run XPropertyLog "_XMONAD_LOG_1"
                         , Run BatteryP ["BAT0"]
-                                       ["-t", "<acstatus>"
+                                       [ "-t", "<acstatus>"
                                        , "-S", "Off", "-d", "0", "-m", "3"
                                        , "-L", "10", "-H", "90", "-p", "3"
                                        , "-W", "0"
                                        , "-f", "󰂎󰁺󰁻󰁼󰁽󰁾󰁿󰂀󰂁󰂂󰁹"
                                        , "--"
                                        , "-P"
-                                       , "-i", "<fn=1>\xf1e6</fn>"
-                                       , "-O", "<fn=1><leftbar>  \xf1e6</fn> <timeleft>"
+                                       , "-i", "<fn=1></fn>"
+                                       , "-O", "<fn=1><leftbar> </fn> <timeleft>"
                                        , "-o", "<fn=1><leftbar></fn> <timeleft>"
-                                       , "-l", "#f38ba8" "-h" "#a6e3a1"
+                                       , "-l", "#f38ba8", "-h", "#a6e3a1"
                                        , "-H", "10", "-L", "7"
                                        ] 50
                         ]

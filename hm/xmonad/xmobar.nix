@@ -35,7 +35,7 @@
                                        , "-H", "10", "-L", "7"
                                        ] 50
                         , Run XPropertyLog "_XMONAD_LOG_1"
-                   ]
+                        ]
            , sepChar = "%"
            , alignSep = "}{"
            , template = "<fn=1>\xf313</fn> %_XMONAD_LOG_1%}%date%{%battery% <fn=1>\xf35e</fn>"

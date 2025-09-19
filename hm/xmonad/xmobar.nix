@@ -3,7 +3,8 @@
   programs.xmobar.enable = true;
 
   home.file.".config/xmobar/xmobarrc_main".text = ''
-    Config { font = "Hack Mono 12"
+    Config 
+      { font = "Hack Mono 12"
       , additionalFonts = ["Symbols Nerd Font Mono 12"]
       , borderColor = "black"
       , border = FullB
@@ -39,6 +40,6 @@
       , sepChar = "%"
       , alignSep = "}{"
       , template = "<fn=1>\xf313</fn> %_XMONAD_LOG_1%}%date%{%battery% <fn=1>\xf35e</fn>"
-
+      }
   '';
 }

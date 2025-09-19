@@ -1,3 +1,5 @@
+{- LANGUAGE UnicodeSyntax -}
+
 -- Base
 import XMonad
 import qualified XMonad.StackSet as W
@@ -213,19 +215,34 @@ myHandleEventHook :: Event -> X All
 myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
 
 barSpawner :: ScreenId -> X StatusBarConfig
-barSpawner _ = pure $ statusBarPropTo "_XMONAD_LOG_1" "xmobar -x 0 ~/.config/xmobar/xmobarrc_main" (pure ppMain)
+barSpawner 0 = pure $ statusBarPropTo "_XMONAD_LOG_1" "xmobar -x 0 ~/.config/xmobar/xmobarrc_main" (pure ppMain)
+barSpawner _ = pure $ statusBarPropTo "_XMONAD_LOG_2" "xmobar -x 1 ~/.config/xmobar/xmobarrc_other" (pure ppMain)
 
 ppMain :: PP
-ppMain = filterOutWsPP [scratchpadWorkspaceTag] 
-  def { ppCurrent          = wrap "[" "]"
-      , ppVisible          = wrap "<" ">"
+ppMain = filterOutWsPP [scratchpadWorkspaceTag]
+  def { ppCurrent          = showWS catSapphire
+      , ppVisible          = showWS catText
+      , ppHidden           = showWS catOverlay1
       , ppHiddenNoWindows  = const ""
       , ppVisibleNoWindows = Nothing
-      , ppUrgent           = id
-      , ppSep              = "  "
+      , ppUrgent           = showWS catRed
       , ppWsSep            = " "
+      , ppSep              = "   "
       , ppTitle            = shorten 40
       }
+  where
+    -- Show a workspace with a given fg color
+    -- and a default bg color
+    showWS fg = xmobarColor fg "" . renameWS
+    renameWS "1" = xmobarFont 1 "\xf03a6"
+    renameWS "2" = xmobarFont 1 "\xf03a9"
+    renameWS "3" = xmobarFont 1 "\xf03ac"
+    renameWS "4" = xmobarFont 1 "\xf03ae"
+    renameWS "5" = xmobarFont 1 "\xf03b0"
+    renameWS "6" = xmobarFont 1 "\xf03b5"
+    renameWS "7" = xmobarFont 1 "\xf03b8"
+    renameWS "8" = xmobarFont 1 "\xf03bb"
+    renameWS "9" = xmobarFont 1 "\xf03be"
 
 main :: IO ()
 main = do

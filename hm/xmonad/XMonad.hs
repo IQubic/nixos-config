@@ -216,16 +216,16 @@ barSpawner :: ScreenId -> X StatusBarConfig
 barSpawner _ = pure $ statusBarPropTo "_XMONAD_LOG_1" "xmobar -x 0 ~/.config/xmobar/xmobarrc_main" (pure ppMain)
 
 ppMain :: PP
-ppMain = def { ppCurrent          = wrap "[" "]"
-             , ppVisible          = wrap "<" ">"
-             , ppHiddenNoWindows  = const ""
-             , ppVisibleNoWindows = Nothing
-             , ppUrgent           = id
-             , ppSep              = "  "
-             , ppWsSep            = " "
-             , ppTitle            = shorten 40
-             , ppSort             = pure $ compare . filterOutWs [scratchpadWorkspaceTag]
-             }
+ppMain = filterOutWsPP [scratchpadWorkspaceTag] 
+  def { ppCurrent          = wrap "[" "]"
+      , ppVisible          = wrap "<" ">"
+      , ppHiddenNoWindows  = const ""
+      , ppVisibleNoWindows = Nothing
+      , ppUrgent           = id
+      , ppSep              = "  "
+      , ppWsSep            = " "
+      , ppTitle            = shorten 40
+      }
 
 main :: IO ()
 main = do

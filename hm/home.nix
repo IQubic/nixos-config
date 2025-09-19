@@ -20,6 +20,7 @@
   # Packages not needed by root
   home.packages = with pkgs; [
     alsa-utils
+    arandr
     archipelago
     betterdiscordctl
     bqnlsp

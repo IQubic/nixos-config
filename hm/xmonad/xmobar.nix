@@ -19,7 +19,6 @@
            , overrideRedirect = True
            , textOutputFormat = Ansi
            , commands = [ Run Date "<fc=#cba6f7>%a %b %e - %H:%M:%S</fc>" "date" 10
-                    --  , Run Alsa "default" "Master"
                         , Run BatteryP ["BAT0"]
                                        [ "-t", "<acstatus>"
                                        , "-S", "Off", "-d", "0", "-m", "3"

@@ -23,7 +23,7 @@
                         ]
            , sepChar = "%"
            , alignSep = "}{"
-           , template = "<fn=1>\xf313</fn> %_XMONAD_LOG_1%}%date%{%battery% <fn=1>\xf35e</fn>"
+           , template = "<fn=1>\uf313</fn> %_XMONAD_LOG_1%}%date%{%battery% <fn=1>\uf35e</fn>"
            }
   '';
 }

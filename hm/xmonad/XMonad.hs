@@ -224,7 +224,7 @@ ppMain = def { ppCurrent          = wrap "[" "]"
              , ppSep              = "  "
              , ppWsSep            = " "
              , ppTitle            = shorten 40
-             , ppSort             = pure $ filterOutWs [scratchpadWorkspaceTag]
+             , ppSort             = pure $ compare . filterOutWs [scratchpadWorkspaceTag]
              }
 
 main :: IO ()

@@ -72,7 +72,7 @@
                         ]
            , sepChar = "%"
            , alignSep = "}{"
-           , template = "%_XMONAD_LOG_2}{%date%"
+           , template = "%_XMONAD_LOG_2%}{%date%"
            }
   '';
 }

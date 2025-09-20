@@ -209,7 +209,7 @@ myKeys =
     ] ++ -- Better physical screen management
     [ (mods ++ [key], f sc)
     | (key, sc) <- zip "wer" [0..]
-    , (mods, f) <- [("M-", greedyViewScreen def), ("M-S-", sendToScreen def)]]
+    , (mods, f) <- [("M-", viewScreen def), ("M-S-", sendToScreen def)]]
 
 -- Greedy View a given physical screen
 greedyViewScreen :: ScreenComparator -> PhysicalScreen -> X ()

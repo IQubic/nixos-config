@@ -67,8 +67,7 @@
            , allDesktops = False
            , overrideRedirect = True
            , textOutputFormat = Ansi
-           , commands = [ Run XPropertyLog "_XMONAD_LOG_2" 
-                        , Run Date "<fc=#cba6f7>%a %b %e - %H:%M:%S</fc>" "date" 10
+           , commands = [ Run Date "<fc=#cba6f7>%a %b %e - %H:%M:%S</fc>" "date" 10
                         ]
            , sepChar = "%"
            , alignSep = "}{"

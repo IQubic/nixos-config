@@ -23,14 +23,14 @@
       };
       "eDP-1" = {
         enable = true;
-        primary = false;
+        primary = true;
         mode = "1920x1080";
         rate = "60.00";
         position = "1920x1080";
       };
       "HDMI-1" = {
         enable = true;
-        primary = true;
+        primary = false;
         mode = "1920x1080";
         rate = "60.00";
         position = "0x0";

@@ -14,7 +14,7 @@
   };
 
   # Add configuration for additional heads
-  programs.autorandr {
+  programs.autorandr = {
     enable = true;
     profiles."desk" = {
       fingerprint = {

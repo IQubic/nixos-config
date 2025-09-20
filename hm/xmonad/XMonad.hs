@@ -11,12 +11,14 @@ import XMonad.Actions.CopyWindow (kill1)
 import XMonad.Actions.Promote
 import XMonad.Actions.RotSlaves (rotSlavesDown, rotAllDown)
 import XMonad.Actions.WithAll (killAll)
+import XMonad.Actions.PhysicalScreens
 
 -- Hooks
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks (avoidStruts, docks)
 import XMonad.Hooks.WindowSwallowing
 import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
+import XMonad.Hooks.Rescreen
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
 import XMonad.Hooks.SetWMName
@@ -204,16 +206,24 @@ myKeys =
     -- Screenshots
     , ("M-a", spawn "flameshot full")
     , ("M-s", unGrab >> spawn "flameshot gui")
-    ] ++ -- More Window Navigation
-    [ ("M-"++mod++"<"++dk++">", sendMessage $ msg d)
-    | (dk, d) <- [("U",U), ("R",R), ("D",D), ("L",L)]
-    , (mod, msg) <- [("", Go), ("S-", Move), ("C-S-", Swap)]
-    ]
+    ] ++ -- Better physical screen management
+    [ (mods ++ [key], f sc)
+    | (key, sc) <- zip "wer" [0..]
+    , (mods, f) <- [("M-", greedyViewScreen def), ("M-S-", sendToScreen def)]]
+
+-- Greedy View a given physical screen
+greedyViewScreen :: ScreenComparator -> PhysicalScreen -> X ()
+greedyViewScreen sc p =
+  do i <- getScreen sc p
+     whenJust i $ \s -> do
+       w <- screenWorkspace s
+       whenJust w $ windows . W.greedyView
 
 -- HandleEventHook Rules
 myHandleEventHook :: Event -> X All
 myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
 
+-- Spawn bars on screens
 barSpawner :: ScreenId -> X StatusBarConfig
 barSpawner 0 = pure $ statusBarPropTo "_XMONAD_LOG_1" "xmobar -x 0 ~/.config/xmobar/xmobarrc_main" (pure ppMain)
 barSpawner _ = pure $ statusBarPropTo "_XMONAD_LOG_2" "xmobar -x 1 ~/.config/xmobar/xmobarrc_other" (pure ppMain)
@@ -247,6 +257,7 @@ ppMain = filterOutWsPP [scratchpadWorkspaceTag]
 main :: IO ()
 main = do
     xmonad $ javaHack
+           $ addRandrChangeHook (spawn "autorandr --change")
            $ dynamicSBs barSpawner
            $ docks
            $ ewmhFullscreen

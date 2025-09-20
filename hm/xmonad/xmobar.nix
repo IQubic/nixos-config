@@ -31,7 +31,7 @@
                         , Run Wireless "wlp2s0"
                               [ "-t", "<qualitybar>"
                               , "-L", "1", "-l", "#f38ba8"
-                              , "-m", "#a6e3a1", "-h", "#a6e3a1"
+                              , "-n", "#a6e3a1", "-h", "#a6e3a1"
                               , "-W", "0", "-f", "󰤭󰤯󰤯󰤟󰤟󰤢󰤢󰤥󰤥󰤨󰤨"
                               ] 50
                         , Run BatteryP ["BAT0"]
@@ -67,10 +67,12 @@
            , allDesktops = False
            , overrideRedirect = True
            , textOutputFormat = Ansi
-           , commands = [ Run XPropertyLog "_XMONAD_LOG_2" ]
+           , commands = [ Run XPropertyLog "_XMONAD_LOG_2" 
+                        , Run Date "<fc=#cba6f7>%a %b %e - %H:%M:%S</fc>" "date" 10
+                        ]
            , sepChar = "%"
            , alignSep = "}{"
-           , template = "}%_XMONAD_LOG_2%{"
+           , template = "%_XMONAD_LOG_2}{%date%"
            }
   '';
 }

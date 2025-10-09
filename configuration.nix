@@ -105,7 +105,7 @@
   programs.virt-manager.enable = true;
 
   # Ignore the power switch being pressed
-  services.logind.powerKey = "ignore";
+  services.logind.settings.Login.HandlePowerKey = "ignore";
 
   # Enable the X11 windowing system.
   services = {

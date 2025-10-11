@@ -1,7 +1,6 @@
-{- LANGUAGE UnicodeSyntax -}
-
 -- Base
 import XMonad
+import XMonad.Prelude (WindowScreen)
 import qualified XMonad.StackSet as W
 import System.IO (hPutStrLn, Handle)
 import System.Exit (exitSuccess)
@@ -46,6 +45,8 @@ import XMonad.Util.SpawnOnce
 import XMonad.Util.Hacks (javaHack, fixSteamFlicker)
 
 -- Data and Control modules
+import Data.List (find, intercalate, sortOn)
+import Data.Maybe (fromMaybe)
 import Data.Monoid (All)
 
 -- Theme
@@ -159,8 +160,8 @@ myKeys =
     , ("M-p", spawn "discord")
 
     -- Kill Windows
-    , ("M-S-c", kill1)     -- Kill the currently focused client
-    , ("M-S-a", killAll)   -- Kill all windows on current workspace
+    , ("M-S-c", kill1)   -- Kill the currently focused client
+    , ("M-S-a", killAll) -- Kill all windows on current workspace
 
     -- Window Navigation
     , ("M-m", windows W.focusMaster)  -- Move focus to the master window
@@ -225,77 +226,55 @@ myHandleEventHook = swallowEventHook (className =? "Alacritty") (return True)
 -- Spawn bars on screens
 barSpawner :: ScreenId -> X StatusBarConfig
 barSpawner sid
-  sid == 0  = spawnBar "_XMONAD_LOG_1" "xmobar -x 0 ~/.config/xmobar/xmobarrc_main"
-  sid == 1  = spawnBar "_XMONAD_LOG_2" "xmobar -x 1 ~/.config/xmobar/xmobarrc_other"
-    where
-      spawnBar prop cmd = statusBarGeneric cmd (xmonadPropLog' prop =<< mkLogString sid)
+  | sid == 0 = spawnBar "_XMONAD_LOG_1" "xmobar -x 0 ~/.config/xmobar/xmobarrc_main"
+  | sid == 1 = spawnBar "_XMONAD_LOG_2" "xmobar -x 1 ~/.config/xmobar/xmobarrc_other"
+  | otherwise = mempty
+  where
+    spawnBar prop cmd = pure $ statusBarGeneric cmd (xmonadPropLog' prop =<< mkLogString sid)
 
 -- Build an output specific to the current screen
 mkLogString :: ScreenId -> X String
 mkLogString sid = do
-  workspaces <- formatWorkspaces
-  layout <- formatLayout
-  title <- formatTitle
-  pure $ intercalate "   " $ filter notNull
-  [ formatWorkspaces
-  , formatLayout
-  , formatTitle
-  ]
+  workspaces <- formatWorkspaces sid
+  layout <- formatLayout sid
+  title <- formatTitle sid
+  pure $ intercalate "   " $ filter (not . null)
+    [ workspaces
+    , layout
+    , title
+    ]
   where
-   formatWorkspaces = withScreen sid $ \screen -> do
-     -- Doing it this way because the workspace on this screen might not be focused
-     currentWS <- W.tag $ W.workspace screen -- Get workspace on this screen
-     -- Get all workspaces, visible workspace tags, hidden workspace tags
-     (allWSs, visibleWSs, hiddenWSs) <- withWindowSet $ \s ->
-       pure (W.workspaces s, map W.tag (current s : visible s), W.tag $ W.hidden s)
-     pure $ intercalate " " $ filter notNulling $ do
-       -- Filter out scratchpads
-       ws <- filter (\W.Workspace { W.tag = tag } -> tag != scratchpadWorkspaceTag) allWSs
-       let tag = W.tag ws
-       -- Format workspace based on its state
-       pure $ if tag == currentWS then showWS catSapphire tag      -- Visible on this screen
-              else if tag `elem` visibleWs then showWS catText tag -- Visible on other screen
-              else case W.stack ws of                              -- Hidden
-                Just _  -> showWS catOverlay1 tag                  -- Hidden with windows
-                Nothing -> ""                                      -- Hidden no windows
-   formatLayout sid = (`withScreen` sid) $ Just . description . W.layout . W.workspace
-   formatTitle sid = withScreen sid $ \screen ->
-     case W.stack $ W.workspace screen of -- Check if any windows are being displayed
-       Just s  -> Just $ shorten 40 $ show $ getName $ W.focus s
-       Nothing -> Nothing
-   -- Get info about a given screen
-   withScreen :: ScreenId -> (WindowScreen -> Maybe String) -> X String
-   withScreen n f = do
-     ss <- withWindowSet $ return . W.screens
-     case find ((== n) . W.screen ss of
-       Just s  -> fromMaybe "" (f s)
-       Nothing -> ""
-   -- Show a workspace with a given fg color
-   -- and a default bg color
-   showWS fg = xmobarColor fg "" . renameWS
-   renameWS "1" = xmobarFont 1 "\xf03a6"
-   renameWS "2" = xmobarFont 1 "\xf03a9"
-   renameWS "3" = xmobarFont 1 "\xf03ac"
-   renameWS "4" = xmobarFont 1 "\xf03ae"
-   renameWS "5" = xmobarFont 1 "\xf03b0"
-   renameWS "6" = xmobarFont 1 "\xf03b5"
-   renameWS "7" = xmobarFont 1 "\xf03b8"
-   renameWS "8" = xmobarFont 1 "\xf03bb"
-   renameWS "9" = xmobarFont 1 "\xf03be"
-
-xmobarPP :: X PP
-xmobarPP = pure $ filterOutWsPP [scratchpadWorkspaceTag]
-  def { ppCurrent          = showWS catSapphire
-      , ppVisible          = showWS catText
-      , ppHidden           = showWS catOverlay1
-      , ppHiddenNoWindows  = const ""
-      , ppVisibleNoWindows = Nothing
-      , ppUrgent           = showWS catRed
-      , ppWsSep            = " "
-      , ppSep              = "   "
-      , ppTitle            = shorten 40
-      }
-  where
+    formatWorkspaces :: ScreenId -> X String
+    formatWorkspaces sid = withScreen sid $ \screen -> do
+      -- Doing it this way because the workspace on this screen might not be focused
+      let currentWS = W.tag $ W.workspace screen -- Get workspace on this screen
+      -- Get all workspaces, visible workspace tags
+      (allWSs, visibleWSs) <- withWindowSet $ \ss ->
+        pure (W.workspaces ss, map (W.tag . W.workspace) (W.current ss : W.visible ss))
+      pure $ Just $ intercalate " " $ filter (not . null) $ do
+        -- Filter out scratchpads, and sort workspaces
+        ws <- sortOn W.tag $ filter (\W.Workspace { W.tag = tag } -> tag /= scratchpadWorkspaceTag) allWSs
+        let currTag = W.tag ws
+        -- Format workspace based on its state
+        pure $ if currTag == currentWS then showWS catSapphire currTag  -- Visible on this screen
+          else if currTag `elem` visibleWSs then showWS catText currTag -- Visible on other screen
+          else case W.stack ws of                                       -- Hidden workspace
+            Just _  -> showWS catOverlay1 currTag                       -- Hidden with windows
+            Nothing -> ""                                               -- Hidden no windows
+    formatLayout :: ScreenId -> X String
+    formatLayout sid = withScreen sid $ pure . Just . description . W.layout . W.workspace
+    formatTitle :: ScreenId -> X String
+    formatTitle sid = withScreen sid $ \screen ->
+     case W.stack (W.workspace screen) of -- Check if any windows are being displayed
+       Just s  -> fmap (Just . shorten 40 . show) $ getName $ W.focus s
+       Nothing -> pure Nothing
+    -- Get info about a given screen, if it exists
+    withScreen :: ScreenId -> (WindowScreen -> X (Maybe String)) -> X String
+    withScreen n f = do
+      screens <- withWindowSet (pure . W.screens) -- Get all screens
+      case find ((== n) . W.screen) screens of    -- Find given screen
+        Just s  -> fromMaybe "" <$> f s           -- Screen exists
+        Nothing -> pure ""                        -- Screen doesn't exist
     -- Show a workspace with a given fg color
     -- and a default bg color
     showWS fg = xmobarColor fg "" . renameWS

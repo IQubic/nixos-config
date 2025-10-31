@@ -1,11 +1,16 @@
-{ config, pkgs, lib, ... }:
 {
-   # Don't have systemd start polybar
-   systemd.user.services.polybar = lib.mkForce { };
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  # Don't have systemd start polybar
+  systemd.user.services.polybar = lib.mkForce { };
 
-   catppuccin.polybar.enable = true;
+  catppuccin.polybar.enable = true;
 
-   services.polybar = {
+  services.polybar = {
     enable = true;
 
     package = pkgs.polybar.override { pulseSupport = true; };
@@ -28,7 +33,7 @@
         enable-struts = true;
 
         font-0 = "Hack:style=Regular:size=12";
-        font-1 = "Symbols Nerd Font Mono:size=14" ;
+        font-1 = "Symbols Nerd Font Mono:size=14";
 
         background = "\${colors.base}";
         foreground = "\${colors.text}";
@@ -115,7 +120,7 @@
 
         format-volume = "<ramp-volume> <label-volume>";
         label-volume = "%percentage%%";
-        ramp-volume-0 = ""; 
+        ramp-volume-0 = "";
         ramp-volume-1 = "";
         ramp-volume-2 = "";
 
@@ -133,7 +138,7 @@
 
         format-connected = "<ramp-signal>";
         ramp-signal-0 = "󰤯";
-        ramp-signal-1 = "󰤟"; 
+        ramp-signal-1 = "󰤟";
         ramp-signal-2 = "󰤢";
         ramp-signal-3 = "󰤥";
         ramp-signal-4 = "󰤨";
@@ -161,16 +166,16 @@
         label-discharging = "%time%";
         format-discharging-foreground = "\${colors.text}";
 
-        ramp-capacity-0  = "󰂎";
-        ramp-capacity-1  = "󰁺";
-        ramp-capacity-2  = "󰁻";
-        ramp-capacity-3  = "󰁼";
-        ramp-capacity-4  = "󰁽";
-        ramp-capacity-5  = "󰁾";
-        ramp-capacity-6  = "󰂀";
-        ramp-capacity-7  = "󰂀";
-        ramp-capacity-8  = "󰂁";
-        ramp-capacity-9  = "󰂂";
+        ramp-capacity-0 = "󰂎";
+        ramp-capacity-1 = "󰁺";
+        ramp-capacity-2 = "󰁻";
+        ramp-capacity-3 = "󰁼";
+        ramp-capacity-4 = "󰁽";
+        ramp-capacity-5 = "󰁾";
+        ramp-capacity-6 = "󰂀";
+        ramp-capacity-7 = "󰂀";
+        ramp-capacity-8 = "󰂁";
+        ramp-capacity-9 = "󰂂";
         ramp-capacity-10 = "󰁹";
 
         label-full = "󰁹 FULL";

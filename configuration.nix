@@ -1,16 +1,21 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelModules = ["hid-nintendo"];
+  boot.kernelModules = [ "hid-nintendo" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Setup networking
-  networking.hostName = "LATITUDE-NIXOS"; 
+  networking.hostName = "LATITUDE-NIXOS";
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -71,7 +76,7 @@
   ];
   nixpkgs.config.allowUnfree = true;
 
-  # Enable Steam  
+  # Enable Steam
   programs.steam.enable = true;
   hardware.steam-hardware.enable = true;
 
@@ -115,7 +120,7 @@
       xkb = {
         layout = "us";
         options = "caps:escape";
-      };    
+      };
 
       displayManager.lightdm = {
         enable = true;
@@ -152,15 +157,17 @@
       packages = [ pkgs.dconf ];
     };
   };
-  
+
   # Graphics Stuff
   hardware.graphics = {
     enable = true;
-    enable32Bit = true;    
+    enable32Bit = true;
     extraPackages = [ pkgs.intel-media-driver ];
-    extraPackages32 = [ pkgs.pkgsi686Linux.intel-media-driver ] ;
+    extraPackages32 = [ pkgs.pkgsi686Linux.intel-media-driver ];
   };
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
 
   # Enable Audio
   security.rtkit.enable = true;
@@ -170,7 +177,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  
+
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;

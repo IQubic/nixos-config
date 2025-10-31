@@ -1,21 +1,24 @@
-{ config, pkgs, bqnlsp, uiua, ... }:
-
+{
+  config,
+  pkgs,
+  bqnlsp,
+  uiua,
+  ...
+}:
 {
   home.username = "sophia";
   home.homeDirectory = "/home/sophia";
   xdg.enable = true;
- 
-  imports = [
-#    ./magicTileZip.nix    
 
+  imports = [
     ./alacritty.nix
-    ./emacs/emacs.nix
+    ./emacs.nix
     ./dunst.nix
     ./flameshot.nix
     ./picom.nix
-    ./xmonad/xmonad.nix 
-    ./zsh.nix 
- ];
+    ./xmonad/xmonad.nix
+    ./zsh.nix
+  ];
 
   # Packages not needed by root
   home.packages = with pkgs; [
@@ -40,6 +43,9 @@
     hunspellDicts.en_GB-ise
     libreoffice
     lumafly
+    (mgba.overrideAttrs (old: {
+      cmakeFlags = old.cmakeFlags ++ [ "-DCMAKE_POLICY_VERSION_MINIMUM=3.10" ];
+    }))
     pavucontrol
     pcmanfm
     picat
@@ -68,13 +74,13 @@
     enableZshIntegration = true;
   };
 
-#  programs.doom-emacs.config = {
-#    initModules = {
-#      tools = [ "direnv" ];
-#    };
-#  };
+  #  programs.doom-emacs.config = {
+  #    initModules = {
+  #      tools = [ "direnv" ];
+  #    };
+  #  };
 
-  dconf.enable = true;  
+  dconf.enable = true;
 
   programs.git = {
     enable = true;

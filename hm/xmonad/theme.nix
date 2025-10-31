@@ -7,10 +7,10 @@
 
   gtk = {
     enable = true;
-    theme = { 
+    theme = {
       name = "Adwaita-dark";
       package = pkgs.gnome-themes-extra;
-    }; 
+    };
     cursorTheme = {
       package = pkgs.catppuccin-cursors.mochaSapphire;
       name = "catppuccin-mocha-sapphire-cursors";
@@ -34,7 +34,7 @@
   qt = {
     enable = true;
     platformTheme.name = "kvantum";
-    style.name = "kvantum";    
+    style.name = "kvantum";
   };
 
   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";

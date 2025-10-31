@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 {
-  home.packages = [ pkgs.dunst pkgs.libnotify ];
- 
+  home.packages = [
+    pkgs.dunst
+    pkgs.libnotify
+  ];
+
   catppuccin.dunst.enable = true;
 
   services.dunst = {
@@ -10,7 +13,7 @@
       global = {
         monitor = 0;
         follow = "none";
-        
+
         # Position and Size
         width = 200;
         height = 300;
@@ -41,7 +44,7 @@
         padding = 6;
         horizontal_padding = 6;
         text_icon_padding = 0;
-        
+
         # Frame options
         frame_width = 3;
         separator_color = "frame";
@@ -54,17 +57,17 @@
 
         # Font
         font = "Iosevka Term 14";
-        
+
         # Spacing between lines of text
         line_height = 3;
-        
+
         # Markup options
         markup = "full";
         format = "<b>%s</b>\\n%b";
 
         # Text alignment
         alignment = "left";
-        vertical_alignment = "center"; 
+        vertical_alignment = "center";
 
         # Show message age if older than 5 minutes
         show_age_threshold = 300;
@@ -105,15 +108,15 @@
         ignore_dbusclose = true;
 
         # Ignore mouse clicks
-        mouse_left_click   = "none";
+        mouse_left_click = "none";
         mouse_middle_click = "none";
-        mouse_right_click  = "none";
+        mouse_right_click = "none";
       };
       flameshot_ignore = {
         appname = "flameshot";
         skip_display = true;
         history_ignore = true;
       };
-    };  
+    };
   };
 }

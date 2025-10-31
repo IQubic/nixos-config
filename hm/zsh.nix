@@ -9,19 +9,19 @@
 
     shellAliases = {
       # colorize grep output
-      grep  = "grep  --color=auto";
+      grep = "grep  --color=auto";
       egrep = "egrep --color=auto";
       fgrep = "fgrep --color=auto";
 
       # human readable output
-      df   = "df -h";
+      df = "df -h";
       free = "free -m";
 
       # ps
-      psa    = "ps auxf";
+      psa = "ps auxf";
       psgrep = "ps aux | grep -v grep | grep -i -e VSZ -e";
-      psmem  = "ps auxf | sort -nr -k 4";
-      pscpu  = "ps auxf | sort -nr -k 3";
+      psmem = "ps auxf | sort -nr -k 4";
+      pscpu = "ps auxf | sort -nr -k 3";
 
       # Termbin
       tb = "nc termbin.com 9999";

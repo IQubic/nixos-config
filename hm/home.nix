@@ -74,15 +74,9 @@
     enableZshIntegration = true;
   };
 
-  #  programs.doom-emacs.config = {
-  #    initModules = {
-  #      tools = [ "direnv" ];
-  #    };
-  #  };
-
   dconf.enable = true;
 
-  programs.git = {
+  programs.git.settings = {
     enable = true;
     userName = "iqubic";
     userEmail = "avi.caspe@gmail.com";

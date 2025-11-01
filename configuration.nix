@@ -39,7 +39,7 @@
     bqn386
     noto-fonts
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     nerd-fonts.hack
     nerd-fonts.symbols-only
     hack-font

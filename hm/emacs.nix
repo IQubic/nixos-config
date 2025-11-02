@@ -11,7 +11,8 @@
 
   # Packages required for Doom Emacs
   home.packages = with pkgs; [
-    ripgrep
     fd
+    ripgrep
+    tree-sitter
   ];
 }

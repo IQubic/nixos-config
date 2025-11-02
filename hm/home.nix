@@ -43,9 +43,7 @@
     hunspellDicts.en_GB-ise
     libreoffice
     lumafly
-    (mgba.overrideAttrs (old: {
-      cmakeFlags = old.cmakeFlags ++ [ "-DCMAKE_POLICY_VERSION_MINIMUM=3.10" ];
-    }))
+    mgba
     pavucontrol
     pcmanfm
     picat

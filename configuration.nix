@@ -150,6 +150,9 @@
     libinput.enable = true;
     upower.enable = true;
     gnome.gnome-keyring.enable = true;
+    udev.extraRules = ''
+      SUBSYSTEM=="hidraw", KERNELS=="*:FEED:400D.*", MODE="0666"
+    '';
     udev.packages = [ pkgs.qmk-udev-rules ];
 
     dbus = {

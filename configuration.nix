@@ -59,6 +59,7 @@
     lm_sensors
     lshw
     nixfmt-rfc-style
+    nixfmt-tree
     pamixer
     pciutils
     qemu

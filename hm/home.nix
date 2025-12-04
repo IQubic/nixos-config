@@ -74,11 +74,13 @@
 
   dconf.enable = true;
 
-  programs.git.settings = {
+  programs.git = {
     enable = true;
-    userName = "iqubic";
-    userEmail = "avi.caspe@gmail.com";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Sophia Caspe";
+        email = "avi.caspe@gmail.com";
+      };
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
     };

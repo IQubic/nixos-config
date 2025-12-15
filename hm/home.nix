@@ -8,7 +8,6 @@
 {
   home.username = "sophia";
   home.homeDirectory = "/home/sophia";
-  xdg.enable = true;
 
   imports = [
     ./alacritty.nix
@@ -83,6 +82,47 @@
       };
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
+    };
+  };
+
+  xdg = {
+    enable = true;
+    mime.enable = true;
+    mimeApps = let
+      browser  = [ "firefox.desktop" ];
+      editor   = [ "emacsclient.desktop" ];
+      terminal = [ "alacritty.desktop" ];
+      sxiv     = [ "sxiv.desktop" ];
+      vlc      = [ "vlc.desktop" ];
+    in
+    {
+      enable = true;
+      defaultApplications = {
+        "application/json" = editor;
+        "application/pdf" = browser;
+        "application/x-extension-htm" = browser;
+        "application/x-extension-html" = browser;
+        "application/x-extension-shtml" = browser;
+        "application/x-extension-xht" = browser;
+        "application/x-extension-xhtml" = browser;
+        "application/xhtml+xml" = browser;
+        "audio/flac" = vlc;
+        "audio/mpeg" = vlc;
+        "audio/x-aiff" = vlc;
+        "image/apng" = sxiv;
+        "image/avif" = sxiv;
+        "image/gif" = sxiv;
+        "image/jpeg" = sxiv;
+        "image/jpg" = sxiv;
+        "image/png" = sxiv;
+        "image/svg+xml" = sxiv;
+        "image/webp" = sxiv;
+        "text/plain" = editor;
+        "video/mp4" = vlc;
+        "x-scheme-handler/http" = browser;
+        "x-scheme-handler/https" = browser;
+        "x-scheme-handler/terminal" = terminal;
+      };
     };
   };
 

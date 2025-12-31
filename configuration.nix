@@ -182,7 +182,7 @@
     pulse.enable = true;
 
     wireplumber.extraConfig."99-disable-suspend" = {
-      "monitor.alsa.rules" = [
+      "monitor.bluez.rules" = [
         {
           matches = [
             {

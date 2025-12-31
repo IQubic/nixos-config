@@ -186,10 +186,10 @@
         {
           matches = [
             {
-              "node.name" = "~alsa_input.*";
+              "node.name" = "~bluez_input.*";
             }
             {
-              "node.name" = "~alsa_output.*";
+              "node.name" = "~bluez_output.*";
             }
           ];
           actions = {

@@ -1,8 +1,6 @@
 {
   config,
   pkgs,
-  bqnlsp,
-  uiua,
   ...
 }:
 {
@@ -25,8 +23,6 @@
     arandr
     archipelago
     betterdiscordctl
-    bqnlsp
-    cbqn-replxx
     cockatrice
     chromium
     dfu-util
@@ -52,7 +48,6 @@
     simplescreenrecorder
     sxiv
     tenacity
-    uiua
     vlc
     winePackages.stagingFull
     winetricks

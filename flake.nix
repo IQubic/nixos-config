@@ -19,14 +19,6 @@
     # Emacs
     emacs-overlay.url = "github:nix-community/emacs-overlay";
 
-    # BQN
-    bqnlsp.url = "sourcehut:~detegr/bqnlsp";
-    bqnlsp.inputs.nixpkgs.follows = "nixpkgs";
-
-    #Uiua
-    uiua.url = "github:uiua-lang/uiua";
-    uiua.inputs.nixpkgs.follows = "nixpkgs";
-
     # Theming
     catppuccin.url = "github:catppuccin/nix";
   };
@@ -35,8 +27,6 @@
     inputs@{
       nixpkgs,
       home-manager,
-      bqnlsp,
-      uiua,
       ...
     }:
     {
@@ -77,19 +67,12 @@
             ];
           }
 
-          # Add Uiua fonts
-          { fonts.packages = [ uiua.packages.${system}.fonts ]; }
+          { }
 
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-              bqnlsp = bqnlsp.packages.${system}.lsp;
-              uiua = uiua.packages.${system}.default;
-            };
 
             home-manager.users.sophia.imports = [
               ./hm/home.nix

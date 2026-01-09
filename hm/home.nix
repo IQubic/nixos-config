@@ -32,6 +32,7 @@
     emote
     ffmpeg
     firefox
+    gargoyle
     gimp
     helvum
     hunspell
@@ -41,13 +42,11 @@
     mgba
     pavucontrol
     pcmanfm
-    picat
     poptracker
     pulseaudio
     racket
     simplescreenrecorder
     sxiv
-    tenacity
     vlc
     winePackages.stagingFull
     winetricks

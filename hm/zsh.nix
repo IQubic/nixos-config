@@ -2,6 +2,7 @@
 {
   programs.zsh = {
     enable = true;
+    dotDir = "${config.xdg.configHome}/zsh";
 
     envExtra = ''
       export PATH=$PATH:$HOME/.local/bin

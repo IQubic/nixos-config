@@ -63,11 +63,13 @@
     pamixer
     pciutils
     qemu
+    rar
     ripgrep
     tree
     vim
     virtiofsd
     wget
+    unrar
     unzip
     usbutils
     xorg.xinit

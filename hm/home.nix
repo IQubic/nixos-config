@@ -40,6 +40,7 @@
     libreoffice
     lumafly
     mgba
+    mono
     pavucontrol
     pcmanfm
     poptracker

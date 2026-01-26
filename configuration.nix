@@ -81,6 +81,7 @@
 
   # Enable Steam
   programs.steam.enable = true;
+  programs.steam.extraPackages = [ pkgs.mono ];
   hardware.steam-hardware.enable = true;
 
   # Enable Joycond

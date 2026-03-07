@@ -22,6 +22,7 @@
     alsa-utils
     arandr
     archipelago
+    azahar
     betterdiscordctl
     cockatrice
     chromium
@@ -29,7 +30,6 @@
     (discord.override {
       withOpenASAR = true;
     })
-    emote
     ffmpeg
     firefox
     gargoyle

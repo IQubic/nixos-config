@@ -22,7 +22,6 @@
     alsa-utils
     arandr
     archipelago
-    azahar
     betterdiscordctl
     cockatrice
     chromium

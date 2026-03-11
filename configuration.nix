@@ -60,6 +60,7 @@
     lshw
     nixfmt-rfc-style
     nixfmt-tree
+    p7zip
     pamixer
     pciutils
     qemu

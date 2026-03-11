@@ -58,7 +58,7 @@
     inxi
     lm_sensors
     lshw
-    nixfmt-rfc-style
+    nixfmt
     nixfmt-tree
     p7zip
     pamixer
@@ -73,9 +73,9 @@
     unrar
     unzip
     usbutils
-    xorg.xinit
-    xorg.xev
-    xorg.xmodmap
+    xinit
+    xev
+    xmodmap
     zip
   ];
   nixpkgs.config.allowUnfree = true;
@@ -211,7 +211,7 @@
   services.blueman.enable = true;
 
   # Enable Backlight Control
-  programs.light.enable = true;
+  hardware.acpilight.enable = true;
 
   systemd.services.upower.enable = true;
 

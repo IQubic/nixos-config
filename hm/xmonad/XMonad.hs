@@ -193,8 +193,8 @@ myKeys =
 
     -- System
     , ("M-C-l",                   unGrab >> spawn "i3lock-color --color=833993")
-    , ("<XF86MonBrightnessUp>",   spawn "light -A 10")
-    , ("<XF86MonBrightnessDown>", spawn "light -U 10")
+    , ("<XF86MonBrightnessUp>",   spawn "xbacklight -inc 10")
+    , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
     , ("<XF86AudioRaiseVolume>",  spawn "pamixer -i 5")
     , ("<XF86AudioLowerVolume>",  spawn "pamixer -d 5")
     , ("<XF86AudioMute>",         spawn "pamixer -t")

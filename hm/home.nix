@@ -3,6 +3,9 @@
   pkgs,
   ...
 }:
+let
+  snes9x-nwa = pkgs.callPackage ./snes9x.nix {};
+in
 {
   home.username = "sophia";
   home.homeDirectory = "/home/sophia";
@@ -33,7 +36,6 @@
     firefox
     gargoyle
     gimp
-    helvum
     hunspell
     hunspellDicts.en_GB-ise
     libreoffice
@@ -47,14 +49,14 @@
     simplescreenrecorder
     sxiv
     vlc
-    winePackages.stagingFull
+    wineWow64Packages.stagingFull
     winetricks
     xclip
     xdotool
-    xorg.xwininfo
+    xwininfo
     xournalpp
     zoom-us
-  ];
+  ] ++ [ snes9x-nwa ];
 
   # Direnv
   programs.direnv = {

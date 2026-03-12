@@ -3,6 +3,9 @@
   pkgs,
   ...
 }:
+let
+  snes9x-nwa = pkgs.callPackage ./snes9x-nwa/snes9x-nwa.nix {};
+in
 {
   home.username = "sophia";
   home.homeDirectory = "/home/sophia";
@@ -53,7 +56,7 @@
     xwininfo
     xournalpp
     zoom-us
-  ];
+  ] ++ [ snes9x-nwa ];
 
   # Direnv
   programs.direnv = {

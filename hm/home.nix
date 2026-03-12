@@ -4,7 +4,7 @@
   ...
 }:
 let
-  snes9x-nwa = pkgs.callPackage ./snes9x-nwa/snes9x-nwa.nix {};
+  snes9x-nwa = pkgs.callPackage ./snes9x-nwa/snes9x-nwa.nix { withGtk = true; };
 in
 {
   home.username = "sophia";

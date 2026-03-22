@@ -82,7 +82,7 @@
 
   # Enable Steam
   programs.steam.enable = true;
-  programs.steam.extraPackages = [ pkgs.mono pkgs.libxscrnsaver ];
+  programs.steam.extraPackages = [ pkgs.mono pkgs.libxscrnsaver pkgs.libdecor ];
   hardware.steam-hardware.enable = true;
 
   # Enable Joycond

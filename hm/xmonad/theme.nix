@@ -23,12 +23,12 @@
       '';
     };
 
+    gtk4.theme = config.gtk.theme;
     gtk4.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
       '';
     };
-
   };
 
   qt = {

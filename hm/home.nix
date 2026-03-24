@@ -4,6 +4,7 @@
   ...
 }:
 let
+  archipelago-soh = pkgs.callPackage ./archipelago-soh/archipelago-soh {};
   snes9x-nwa = pkgs.callPackage ./snes9x-nwa/snes9x-nwa.nix { withGtk = true; };
 in
 {
@@ -56,7 +57,7 @@ in
     xwininfo
     xournalpp
     zoom-us
-  ] ++ [ snes9x-nwa ];
+  ] ++ [ archipelago-soh snes9x-nwa ];
 
   # Direnv
   programs.direnv = {

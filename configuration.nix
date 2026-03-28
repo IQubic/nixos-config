@@ -184,30 +184,18 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-
-    wireplumber.extraConfig."99-disable-suspend" = {
-      "monitor.bluez.rules" = [
-        {
-          matches = [
-            {
-              "node.name" = "~bluez_input.*";
-            }
-            {
-              "node.name" = "~bluez_output.*";
-            }
-          ];
-          actions = {
-            update-props = {
-              "session.suspend-timeout-seconds" = 0;
-            };
-          };
-        }
-      ];
-    };
   };
 
-  # Enable Bluetooth
-  hardware.bluetooth.enable = true;
+  # Enable Bluetooth and BLE
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+       General = {
+         ControllerMode = "le";
+         Experimental = true;
+       };
+    };
+  };
   services.blueman.enable = true;
 
   # Enable Backlight Control

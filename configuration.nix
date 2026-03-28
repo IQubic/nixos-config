@@ -186,16 +186,8 @@
     pulse.enable = true;
   };
 
-  # Enable Bluetooth and BLE
-  hardware.bluetooth = {
-    enable = true;
-    settings = {
-       General = {
-         ControllerMode = "le";
-         Experimental = true;
-       };
-    };
-  };
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
   # Enable Backlight Control

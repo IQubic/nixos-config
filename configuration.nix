@@ -4,7 +4,6 @@
   pkgs,
   ...
 }:
-
 {
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -81,7 +80,11 @@
 
   # Enable Steam
   programs.steam.enable = true;
-  programs.steam.extraPackages = [ pkgs.mono pkgs.libxscrnsaver pkgs.libdecor ];
+  programs.steam.extraPackages = [
+    pkgs.mono
+    pkgs.libxscrnsaver
+    pkgs.libdecor
+  ];
   hardware.steam-hardware.enable = true;
 
   # Enable Joycond
@@ -212,7 +215,7 @@
       };
     };
   };
-  # Enable Bluetooth 
+  # Enable Bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 

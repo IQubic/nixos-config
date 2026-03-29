@@ -5,13 +5,13 @@
   programs.emacs = {
     enable = true;
     extraPackages =
-    epkgs: with epkgs; ([
-      tree-sitter-langs
-      (treesit-grammars.with-grammars (p: [
-        p.tree-sitter-haskell
-        p.tree-sitter-nix
-      ]))
-    ]);
+      epkgs: with epkgs; ([
+        tree-sitter-langs
+        (treesit-grammars.with-grammars (p: [
+          p.tree-sitter-haskell
+          p.tree-sitter-nix
+        ]))
+      ]);
   };
   services.emacs.enable = true;
 

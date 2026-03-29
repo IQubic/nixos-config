@@ -3,9 +3,6 @@
   pkgs,
   ...
 }:
-let
-  snes9x-nwa = pkgs.callPackage ./snes9x-nwa/snes9x-nwa.nix { withGtk = true; };
-in
 {
   home.username = "sophia";
   home.homeDirectory = "/home/sophia";
@@ -41,21 +38,22 @@ in
     libreoffice
     lumafly
     mgba
+    pavucontrol
     pcmanfm
     poptracker
+    pulseaudio
     racket
     simplescreenrecorder
     sxiv
     vlc
     wineWow64Packages.stagingFull
     winetricks
-    wiremix
     xclip
     xdotool
     xwininfo
     xournalpp
     zoom-us
-  ] ++ [ snes9x-nwa ];
+  ];
 
   # Direnv
   programs.direnv = {

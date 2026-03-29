@@ -61,6 +61,7 @@
     nixfmt
     nixfmt-tree
     p7zip
+    pamixer
     pciutils
     qemu
     rar

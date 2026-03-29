@@ -195,10 +195,9 @@ myKeys =
     , ("M-C-l",                   unGrab >> spawn "i3lock-color --color=833993")
     , ("<XF86MonBrightnessUp>",   spawn "xbacklight -inc 10")
     , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
-    , ("<XF86AudioRaiseVolume>",  spawn "wpctl set-volume @DEFAULT_SINK@ 5%+")
-    , ("<XF86AudioLowerVolume>",  spawn "wpctl set-volume @DEFAULT_SINK@ 5%-")
-    , ("<XF86AudioMute>",         spawn "wpctl set-mute @DEFAULT_SINK@ toggle")
-
+    , ("<XF86AudioRaiseVolume>",  spawn "pamixer -i 5")
+    , ("<XF86AudioLowerVolume>",  spawn "pamixer -d 5")
+    , ("<XF86AudioMute>",         spawn "pamixer -t")
     -- Dunst
     , ("C-<Space>",     spawn "dunstctl close")
     , ("C-S-<Space>",   spawn "dunstctl history-pop")

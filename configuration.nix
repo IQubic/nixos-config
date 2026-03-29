@@ -187,20 +187,7 @@
   };
 
   # Enable Bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    settings = {
-      general = {
-        FastConnectable = true;
-      };
-    };
-    input = {
-      general = {
-        UserspaceHID = true;
-        ClassicBondedOnly = false;
-      };
-    };
-  };
+  hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
   # Enable Backlight Control

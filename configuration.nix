@@ -61,7 +61,6 @@
     nixfmt
     nixfmt-tree
     p7zip
-    pamixer
     pciutils
     qemu
     rar
@@ -184,9 +183,36 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.extraConfig = {
+      # Set default mic volume
+      "98-default-volume" = {
+        "wireplumber.settings" = {
+          "device.routs.default-source-volume" = 0.25;
+        };
+      };
+      # Disable suspend for Bluetooth headsets
+      "99-disable-suspend" = {
+        "monitor.bluez.rules" = [
+          {
+            matches = [
+              {
+                "node.name" = "~bluez_input.*";
+              }
+              {
+                "node.name" = "~bluez_output.*";
+              }
+            ];
+            actions = {
+              update-props = {
+                "session.suspend-timeout-seconds" = 0;
+              };
+            };
+          }
+        ];
+      };
+    };
   };
-
-  # Enable Bluetooth
+  # Enable Bluetooth 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 

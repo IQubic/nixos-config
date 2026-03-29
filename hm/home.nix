@@ -38,7 +38,6 @@
     libreoffice
     lumafly
     mgba
-    pavucontrol
     pcmanfm
     poptracker
     pulseaudio
@@ -48,6 +47,7 @@
     vlc
     wineWow64Packages.stagingFull
     winetricks
+    wiremix
     xclip
     xdotool
     xwininfo

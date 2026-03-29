@@ -41,16 +41,15 @@ in
     libreoffice
     lumafly
     mgba
-    pavucontrol
     pcmanfm
     poptracker
-    pulseaudio
     racket
     simplescreenrecorder
     sxiv
     vlc
     wineWow64Packages.stagingFull
     winetricks
+    wiremix
     xclip
     xdotool
     xwininfo

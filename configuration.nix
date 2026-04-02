@@ -215,8 +215,18 @@
       };
     };
   };
+
   # Enable Bluetooth
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    input = {
+      general = {
+        UserspaceHID = true;
+        ClassicBondedOnly = false;
+        LEAutoSecurity = false;
+      };
+    };
+  };
   services.blueman.enable = true;
 
   # Enable Backlight Control

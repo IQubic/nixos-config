@@ -64,6 +64,7 @@
                   };
                 };
               })
+              (final: prev: { gnome3 = { inherit (final) gnome-themes-extra; }; })              
             ];
           }
 

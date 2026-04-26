@@ -3,6 +3,15 @@
   pkgs,
   ...
 }:
+let
+  bizhawk = pkgs.fetchFromGitHub {
+    owner = "TASEmulators";
+    repo  = "BizHawk";
+    rev   = "master";
+    hash  = "sha256-OaqNlSUlrutAEzO7qPBUlyO6VTAw2SWFzhkgqAOR+vk=";
+  };
+  emuhawk = (import bizhawk { inherit pkgs; system = "x86_64-linux"; }).emuhawk-latest;
+in
 {
   home.username = "sophia";
   home.homeDirectory = "/home/sophia";
@@ -53,6 +62,8 @@
     xwininfo
     xournalpp
     zoom-us
+  ] ++ [ 
+    emuhawk
   ];
 
   # Direnv
@@ -67,6 +78,7 @@
 
   programs.git = {
     enable = true;
+    signing.format = "openpgp";
     settings = {
       user = {
         name = "Sophia Caspe";
@@ -74,7 +86,6 @@
       };
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
-      signing.format = "openpgp";
     };
   };
 

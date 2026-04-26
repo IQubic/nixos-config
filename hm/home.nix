@@ -8,7 +8,7 @@ let
     owner = "TASEmulators";
     repo  = "BizHawk";
     rev   = "master";
-    hash  = "sha256-OaqNlSUlrutAEzO7qPBUlyO6VTAw2SWFzhkgqAOR+vk=";
+    hash  = "sha256-SvBVwLgpoptXUzAI9Ep1YoFYXNyI+fC15jRSCd0nqVo=";
   };
   emuhawk = (import bizhawk { inherit pkgs; system = "x86_64-linux"; }).emuhawk-latest;
 in

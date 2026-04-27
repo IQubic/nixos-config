@@ -25,6 +25,7 @@
   i18n.extraLocaleSettings.LC_MONETARY = "en_US.UTF-8";
   i18n.extraLocaleSettings.LC_TIME = "en_US.UTF-8";
   console = {
+    earlySetup = true;
     font = "Lat2-Terminus16";
     keyMap = "us";
   };

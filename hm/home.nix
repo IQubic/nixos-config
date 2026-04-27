@@ -89,8 +89,15 @@ in
     };
   };
 
+  # xdg stuff
   xdg = {
     enable = true;
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      config.common.default = "gtk";
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    };
     mime.enable = true;
     mimeApps =
       let

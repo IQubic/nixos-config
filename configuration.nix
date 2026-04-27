@@ -91,11 +91,14 @@
   # Enable Joycond
   services.joycond.enable = true;
 
-  # Flatpak
+  # Flatpak and xdg
   services.flatpak.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.config.common.default = "gtk";
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config.common.default = "gtk";
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 
   # Allow flakes
   nix.extraOptions = ''
@@ -254,8 +257,11 @@
     ];
   };
   programs.zsh.enable = true;
-  # For ZSH auto completion
-  environment.pathsToLink = [ "/share/zsh" ];
+  environment.pathsToLink = [ 
+    "/share/zsh"
+    "/share/xdg-desktop-portal"
+    "/share/applications"
+  ];
 
   system.stateVersion = "24.05";
 }

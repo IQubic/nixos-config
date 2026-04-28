@@ -20,7 +20,7 @@ in
     ./alacritty.nix
     ./emacs.nix
     ./dunst.nix
-    ./flameshot.nix
+#    ./flameshot.nix
     ./picom.nix
     ./xmonad/xmonad.nix
     ./zsh.nix

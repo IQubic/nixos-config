@@ -61,7 +61,6 @@ in
     xdotool
     xwininfo
     xournalpp
-    zelda64recomp
     zoom-us
   ] ++ [ 
     emuhawk

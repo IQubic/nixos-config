@@ -48,6 +48,7 @@ in
     libreoffice
     lumafly
     mgba
+    modrinth-app
     pcmanfm
     poptracker
     pulseaudio

@@ -15,6 +15,7 @@ in
 {
   home.username = "sophia";
   home.homeDirectory = "/home/sophia";
+  xsession.importedVariables = [ "PATH" ];
 
   imports = [
     ./alacritty.nix
@@ -91,19 +92,13 @@ in
 
   # xdg stuff
   xdg = {
-    enable = true;
-    portal = {
-      enable = true;
-      xdgOpenUsePortal = true;
-      config.common.default = "gtk";
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    };
     mime.enable = true;
     mimeApps =
       let
         browser = [ "firefox.desktop" ];
         editor = [ "emacsclient.desktop" ];
         terminal = [ "alacritty.desktop" ];
+        filer = [ "pcmanfm.desktop" ];
         sxiv = [ "sxiv.desktop" ];
         vlc = [ "vlc.desktop" ];
       in
@@ -129,6 +124,7 @@ in
           "image/png" = sxiv;
           "image/svg+xml" = sxiv;
           "image/webp" = sxiv;
+          "inode/directory" = filer;
           "text/plain" = editor;
           "video/mp4" = vlc;
           "x-scheme-handler/http" = browser;

@@ -203,8 +203,8 @@ myKeys =
     , ("C-S-<Space>",   spawn "dunstctl history-pop")
 
     -- Screenshots
-    , ("M-a", spawn "flatpak run org.flameshot.Flameshot full")
-    , ("M-s", unGrab >> spawn "flatpak run org.flameshot.Flameshot gui")
+    , ("M-a", spawn "flameshot full")
+    , ("M-s", unGrab >> spawn "flameshot gui")
     ] ++ -- Better physical screen management
     [ (mods ++ [key], f sc)
     | (key, sc) <- zip "wer" [0..]

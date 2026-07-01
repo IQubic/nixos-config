@@ -5,8 +5,6 @@
     pkgs.libnotify
   ];
 
-  catppuccin.dunst.enable = true;
-
   services.dunst = {
     enable = true;
     settings = {

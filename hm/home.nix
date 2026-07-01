@@ -3,15 +3,6 @@
   pkgs,
   ...
 }:
-#let
-#  bizhawk = pkgs.fetchFromGitHub {
-#    owner = "TASEmulators";
-#    repo  = "BizHawk";
-#    rev   = "master";
-#    hash  = "sha256-SvBVwLgpoptXUzAI9Ep1YoFYXNyI+fC15jRSCd0nqVo=";
-#  };
-#  emuhawk = (import bizhawk { inherit pkgs; system = "x86_64-linux"; }).emuhawk-latest;
-#in
 {
   home.username = "sophia";
   home.homeDirectory = "/home/sophia";
@@ -23,6 +14,7 @@
     ./dunst.nix
     ./flameshot.nix
     ./picom.nix
+    ./theme.nix
     ./xmonad/xmonad.nix
     ./zsh.nix
   ];
@@ -63,8 +55,6 @@
     xwininfo
     xournalpp
     zoom-us
- # ] ++ [ 
- #   emuhawk
   ];
 
   # Direnv

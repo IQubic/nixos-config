@@ -32,7 +32,7 @@
 
   # Theme the tty
   catppuccin.flavor = "mocha";
-  catppuccin.tty.enable = true;
+  catppuccin.autoEnable = true;
 
   # Fonts
   fonts.packages = with pkgs; [

@@ -2,7 +2,6 @@
 {
   imports = [
     ./xmobar.nix
-    ./theme.nix
   ];
 
   xsession = {

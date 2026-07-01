@@ -8,8 +8,6 @@
   # Don't have systemd start polybar
   systemd.user.services.polybar = lib.mkForce { };
 
-  catppuccin.polybar.enable = true;
-
   services.polybar = {
     enable = true;
 

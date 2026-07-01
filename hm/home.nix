@@ -3,15 +3,15 @@
   pkgs,
   ...
 }:
-let
-  bizhawk = pkgs.fetchFromGitHub {
-    owner = "TASEmulators";
-    repo  = "BizHawk";
-    rev   = "master";
-    hash  = "sha256-SvBVwLgpoptXUzAI9Ep1YoFYXNyI+fC15jRSCd0nqVo=";
-  };
-  emuhawk = (import bizhawk { inherit pkgs; system = "x86_64-linux"; }).emuhawk-latest;
-in
+#let
+#  bizhawk = pkgs.fetchFromGitHub {
+#    owner = "TASEmulators";
+#    repo  = "BizHawk";
+#    rev   = "master";
+#    hash  = "sha256-SvBVwLgpoptXUzAI9Ep1YoFYXNyI+fC15jRSCd0nqVo=";
+#  };
+#  emuhawk = (import bizhawk { inherit pkgs; system = "x86_64-linux"; }).emuhawk-latest;
+#in
 {
   home.username = "sophia";
   home.homeDirectory = "/home/sophia";
@@ -48,7 +48,6 @@ in
     libreoffice
     lumafly
     mgba
-    modrinth-app
     pcmanfm
     poptracker
     pulseaudio
@@ -64,8 +63,8 @@ in
     xwininfo
     xournalpp
     zoom-us
-  ] ++ [ 
-    emuhawk
+ # ] ++ [ 
+ #   emuhawk
   ];
 
   # Direnv

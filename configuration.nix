@@ -232,7 +232,6 @@
     };
   };
   services.blueman.enable = true;
-  services.blueman.withApplet = false;
 
   # Enable Backlight Control
   hardware.acpilight.enable = true;

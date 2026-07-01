@@ -15,7 +15,6 @@
         savePath = "${config.home.homeDirectory}/screenshots";
         savePathFixed = true;
         uiColor = "#00ffde";
-        useX11LegacyScreenshot = true;
       };
 
       Shortcuts = {

@@ -46,8 +46,11 @@
   };
 
   home.pointerCursor = {
+    enable = true;
     x11.enable = true;
     gtk.enable = true;
+    package = pkgs.catppuccin-cursors;
+    name = "catppuccin-mocha-sapphire-cursors";
     size = 32;
   };
 

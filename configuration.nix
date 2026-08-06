@@ -191,12 +191,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.extraConfig = {
-      # Set default mic volume
-      "98-default-volume" = {
-        "wireplumber.settings" = {
-          "device.routs.default-source-volume" = 0.25;
-        };
-      };
       # Disable suspend for Bluetooth headsets
       "99-disable-suspend" = {
         "monitor.bluez.rules" = [

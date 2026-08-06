@@ -22,7 +22,7 @@ in
     ./dunst.nix
     ./flameshot.nix
     ./picom.nix
-    ./theme.nix
+    ./xmonad/theme.nix
     ./xmonad/xmonad.nix
     ./zsh.nix
   ];

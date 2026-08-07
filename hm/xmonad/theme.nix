@@ -14,9 +14,10 @@
       package = pkgs.gnome-themes-extra;
     };
     cursorTheme = {
+      package = pkgs.catppuccin-cursors.mochaSapphire;
       name = "catppuccin-mocha-sapphire-cursors";
+      size = 32;
     };
-    cursorTheme.size = 32;
 
     gtk3.extraConfig = {
       Settings = ''
@@ -49,7 +50,7 @@
     enable = true;
     x11.enable = true;
     gtk.enable = true;
-    package = pkgs.catppuccin-cursors;
+    package = pkgs.catppuccin-cursors.mochaSapphire;
     name = "catppuccin-mocha-sapphire-cursors";
     size = 32;
   };

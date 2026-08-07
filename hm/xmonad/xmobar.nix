@@ -4,7 +4,7 @@
 
   home.file.".config/xmobar/xmobarrc_main".text = ''
     Config { font = "Hack Mono 14"
-           , additionalFonts = ["Symbols Nerd Font Mono 16"]
+           , additionalFonts = ["Symbols Nerd Font Mono 18"]
            , bgColor = "#1e1e2e"
            , fgColor = "#cdd6f4"
            , alpha = 255

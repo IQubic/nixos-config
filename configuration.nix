@@ -139,6 +139,7 @@
         greeters.gtk = {
           enable = true;
           cursorTheme = {
+            package = pkgs.catppuccin-cursors.mochaSapphire;
             name = "catppuccin-mocha-sapphire-cursors";
             size = 32;
           };

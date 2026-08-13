@@ -3,14 +3,6 @@
   pkgs,
   ...
 }:
-let
-bdctlPatched = pkgs.betterdiscordctl.overrideAttrs {
-  patches = pkgs.fetchpatch2 {
-    url = "https://patch-diff.githubusercontent.com/raw/bb010g/betterdiscordctl/pull/166.patch";
-    hash = "sha256-lWp5HkQILU3jZrREvApRpNDZWjABKXza/QoiKQxdhms=";
- };
-};
-in
 {
   home.username = "sophia";
   home.homeDirectory = "/home/sophia";
@@ -32,7 +24,7 @@ in
     alsa-utils
     arandr
     archipelago
-    bdctlPatched
+#    bdctlPatched
     cockatrice
     chromium
     dfu-util
@@ -49,11 +41,11 @@ in
     lumafly
     mgba
     modrinth-app
+    olympus
     pcmanfm
     poptracker
     pulseaudio
     racket
-    simplescreenrecorder
     sxiv
     vlc
     wineWow64Packages.stagingFull

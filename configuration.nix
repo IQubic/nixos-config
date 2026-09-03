@@ -83,9 +83,10 @@
   # Enable Steam
   programs.steam.enable = true;
   programs.steam.extraPackages = [
-    pkgs.mono
-    pkgs.libxscrnsaver
     pkgs.libdecor
+    pkgs.libxcursor
+    pkgs.libxscrnsaver
+    pkgs.mono
   ];
   hardware.steam-hardware.enable = true;
 

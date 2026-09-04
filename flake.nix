@@ -49,15 +49,19 @@
               (self: super: {
                 haskellPackages = super.haskellPackages.override {
                   overrides = hself: hsuper: {
-                    xmonad = hsuper.callHackageDirect {
+                    xmonad = (hsuper.callHackageDirect {
                       pkg = "xmonad";
-                      ver = "0.18.0";
-                      sha256 = "sha256-2Puz25XGjQVj74Am4QpihWrldDKFHtiQvoqCZ+xosl4=";
-                    } { };
+                      ver = "0.18.1";
+                      sha256 = "sha256-1BZXX32aEDEi0SN4gbZDinX6/iqn8mCTDmh6uUfn83s=";
+                    } { }).overrideAttrs (old: {
+                      buildInputs = (old.buildInputs or []) ++ [
+                        super.libxcursor
+                      ];
+                    });
                     xmonad-contrib = hsuper.callHackageDirect {
                       pkg = "xmonad-contrib";
-                      ver = "0.18.1";
-                      sha256 = "sha256-3N85ThXu3dhjWNAKNXtJ8rV04n6R+/rGeq5C7fMOefY=";
+                      ver = "0.18.2";
+                      sha256 = "sha256-i2hu4L5cFCtgcaumdqa+OxnDSwyQVY06la2bugMa16A=";
                     } { };
                     xmonad-extras = hsuper.callHackageDirect {
                       pkg = "xmonad-extras";

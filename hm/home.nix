@@ -7,6 +7,7 @@
   home.username = "sophia";
   home.homeDirectory = "/home/sophia";
   xsession.importedVariables = [ "PATH" ];
+  home.sessionVariables.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [ pkgs.libxcursor ];
 
   imports = [
     ./alacritty.nix
@@ -24,7 +25,6 @@
     alsa-utils
     arandr
     archipelago
-#    bdctlPatched
     cockatrice
     chromium
     dfu-util

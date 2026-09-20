@@ -93,6 +93,9 @@
   # Enable Joycond
   services.joycond.enable = true;
 
+  # Enable fwupd
+  services.fwupd.enable = true;
+
   # Flatpak and xdg
   services.flatpak.enable = true;
   xdg.portal = {

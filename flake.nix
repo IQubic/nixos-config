@@ -60,11 +60,11 @@
                       ver = "0.18.2";
                       sha256 = "sha256-i2hu4L5cFCtgcaumdqa+OxnDSwyQVY06la2bugMa16A=";
                     } {};
-                    xmonad-extras = hsuper.callHackageDirect {
-                      pkg = "xmonad-extras";
-                      ver = "0.17.3";
-                      sha256 = "sha256-o8jant0amg3ekOtSIkn7YuiWsI+rtNgpbWC+1q2phME=";
-                    } {};
+#                    xmonad-extras = hsuper.callHackageDirect {
+#                      pkg = "xmonad-extras";
+#                      ver = "0.17.3";
+#                      sha256 = "sha256-o8jant0amg3ekOtSIkn7YuiWsI+rtNgpbWC+1q2phME=";
+#                    } {};
                   };
                 };
               })

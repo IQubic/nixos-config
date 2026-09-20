@@ -38,9 +38,7 @@
     hunspell
     hunspellDicts.en_GB-ise
     libreoffice
-    lumafly
     mgba
-    modrinth-app
     olympus
     pcmanfm
     poptracker

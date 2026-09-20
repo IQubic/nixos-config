@@ -103,9 +103,11 @@
   };
 
   # Allow flakes
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes auto-allocate-uids
-  '';
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+    "auto-allocate-uids"
+  ];
 
   # Enable dconf
   programs.dconf.enable = true;

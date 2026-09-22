@@ -89,6 +89,7 @@
     pkgs.mono
   ];
   hardware.steam-hardware.enable = true;
+  hardware.uinput.enable = true;
 
   # Enable Joycond
   services.joycond.enable = true;
@@ -171,8 +172,8 @@
     udev.extraRules = ''
       SUBSYSTEM=="hidraw", KERNELS=="*:FEED:400D.*", MODE="0666"
       SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2dc8", MODE="0666", GROUP="users", TAG+="uaccess"
-    '';
-    udev.packages = [ pkgs.qmk-udev-rules ];
+   '';
+    udev.packages = [ pkgs.qmk-udev-rules pkgs.game-devices-udev-rules ];
 
     dbus = {
       enable = true;

@@ -46,7 +46,7 @@
     racket
     sxiv
     vlc
-    wineWow64Packages.stagingFull
+    wine64Packages.stagingFull
     winetricks
     wiremix
     xclip
